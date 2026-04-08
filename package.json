@@ -1,0 +1,33 @@
+{
+  "name": "landing",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:html && npm run build:css && npm run copy:assets && npm run copy:js",
+    "build:html": "posthtml src/index.html -o dist/index.html -c posthtml.config.cjs",
+    "build:css": "postcss src/css/main.pcss -o dist/css/main.css",
+    "copy:assets": "node scripts/copy-assets.mjs",
+    "copy:js": "node scripts/copy-js.mjs",
+    "dev": "npm run copy:js && concurrently -k -n html,css,assets,js,serve \"npm run dev:html\" \"npm run dev:css\" \"npm run dev:assets\" \"npm run dev:js\" \"npm run dev:serve\"",
+    "dev:assets": "onchange -i \"assets/**/*\" -- node scripts/copy-assets.mjs",
+    "dev:serve": "live-server dist --port=3000 --open=/",
+    "dev:html": "onchange -i \"src/**/*.html\" \"src/**/*.svg\" -- posthtml src/index.html -o dist/index.html -c posthtml.config.cjs",
+    "dev:css": "postcss src/css/main.pcss -o dist/css/main.css -w",
+    "dev:js": "onchange -i \"src/js/**/*.js\" -- node scripts/copy-js.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "live-server": "^1.2.2",
+    "onchange": "^7.1.0",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.0",
+    "postcss-preset-env": "^11.2.0",
+    "postcss-url": "^10.1.3",
+    "posthtml": "^0.16.7",
+    "posthtml-cli": "^0.10.0",
+    "posthtml-include": "^2.0.0",
+    "posthtml-inline-svg": "^0.2.0",
+    "sharp": "^0.33.5",
+    "svgo": "^3.3.2"
+  }
+}

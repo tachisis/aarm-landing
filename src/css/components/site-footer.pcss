@@ -1,0 +1,51 @@
+.site-footer {
+  padding: 2.9rem 0;
+  margin: 0 1rem;
+  color: var(--text-invert);
+
+  text-align: center;
+
+  p {
+    font-size: var(--text-base);
+    line-height: normal;
+  }
+}
+
+.site-footer-address {
+  margin-bottom: 2.1rem;
+}
+
+.site-footer-contacts {
+  ins {
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0 0 0.9rem 1.2rem;
+
+    font-family: "Aaic", sans-serif;
+    font-size: var(--text-xl);
+    line-height: normal;
+    letter-spacing: -0.06em;
+    text-decoration: none;
+
+    opacity: 0.5;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0rem;
+      left: -1.2rem;
+      width: 18px;
+      height: 21px;
+      background: url("../images/arrow-3.svg") no-repeat;
+      background-size: contain;
+    }
+  }
+}
+
+.site-footer-contacts-email {
+  margin-bottom: 0.6rem;
+  font-size: var(--text-xs) !important;
+  color: var(--text-accent);
+}

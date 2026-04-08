@@ -1,0 +1,190 @@
+.site-header-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(48, 47, 51, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    opacity 0.35s ease,
+    visibility 0s linear 0.35s;
+}
+
+html.nav-menu-open .site-header-overlay {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transition:
+    opacity 0.35s ease,
+    visibility 0s linear 0s;
+}
+
+@media (--desktop) {
+  .site-header-overlay {
+    display: none;
+  }
+}
+
+.site-header-wrap {
+  position: relative;
+  z-index: 1000;
+  max-width: 72rem;
+  margin: 0 2rem 2.56rem;
+}
+
+@media (--desktop) {
+  .site-header-wrap {
+    margin: 0 auto 2.56rem;
+  }
+}
+
+.site-header {
+  position: relative;
+  z-index: 2;
+  padding: 0.83rem 0.75rem 0.95rem;
+  background-color: var(--bg-content);
+}
+
+.site-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header-title {
+  position: relative;
+}
+
+.site-header-title a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.site-header-title span {
+  display: inline-block;
+  max-width: 120px;
+  font-size: var(--text-xxs);
+  line-height: normal;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.site-header .aaic-logo {
+  width: 30px;
+  height: 30px;
+}
+
+.site-header-drop {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.site-header-panel {
+  background-color: var(--bg-content);
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-header-panel > * {
+  overflow: hidden;
+}
+
+.site-header-wrap[data-open="true"] .site-header-panel {
+  grid-template-rows: 1fr;
+}
+
+.site-header-edge {
+  height: 0.3rem;
+  background: var(--bg-content);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+}
+
+.site-header-nav {
+  text-align: right;
+
+  & ul {
+    list-style: none;
+    padding: 22.4rem 0.75rem 1.8rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    font-size: var(--text-base);
+    font-weight: 500;
+    text-transform: uppercase;
+
+    background: url("../images/airplane.png") no-repeat;
+    background-size: contain;
+    background-position: left 2rem;
+    mix-blend-mode: multiply;
+  }
+
+  .embossing-tape-title {
+    transform: rotate(-0.884deg);
+    text-decoration: none;
+  }
+}
+
+html.nav-menu-open,
+html.nav-menu-open body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+@media (--desktop) {
+  .burger {
+    display: none;
+  }
+
+  .site-header-edge {
+    display: none;
+  }
+
+  .site-header-drop {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0.75rem;
+    left: auto;
+    display: flex;
+    align-items: center;
+
+    z-index: 10;
+  }
+
+  .site-header-panel {
+    display: block;
+    background: transparent;
+  }
+
+  .site-header-panel > * {
+    overflow: visible;
+  }
+
+  .site-header-nav {
+    & ul {
+      flex-direction: row;
+      gap: 1.5rem;
+      padding: 0;
+      background: none;
+      mix-blend-mode: normal;
+      font-size: var(--text-xxs);
+      font-weight: 700;
+    }
+
+    .embossing-tape-title {
+      transform: none;
+    }
+  }
+}
