@@ -1,7 +1,7 @@
 .site-content {
   --site-content-trapezoid-h: 1.6875rem;
 
-  max-width: 80rem;
+  max-width: 82rem;
   margin: 0 auto;
   padding: 0 1rem var(--site-content-trapezoid-h);
   overflow-x: hidden;
@@ -60,4 +60,56 @@
   border: 1px dashed rgba(48, 47, 51, 0.1);
   border-width: 0 1px;
   padding: 1rem 0.5rem;
+}
+
+@media (--desktop) {
+  .site-content {
+    overflow-x: visible;
+  }
+
+  .site-content-wrapper {
+    --site-content-dash: rgba(48, 47, 51, 0.1);
+    --site-content-dash-len: 10px;
+    --site-content-dash-gap: 10px;
+
+    padding: 2rem 3rem;
+
+    border-style: solid;
+    border-color: transparent;
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        var(--site-content-dash) 0,
+        var(--site-content-dash) var(--site-content-dash-len),
+        transparent var(--site-content-dash-len),
+        transparent
+          calc(var(--site-content-dash-len) + var(--site-content-dash-gap))
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        var(--site-content-dash) 0,
+        var(--site-content-dash) var(--site-content-dash-len),
+        transparent var(--site-content-dash-len),
+        transparent
+          calc(var(--site-content-dash-len) + var(--site-content-dash-gap))
+      );
+    background-position: left, right;
+    background-size:
+      1px 100%,
+      1px 100%;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  .site-content-container {
+    --perf-strip: 2rem;
+    --perf-dot: 0.75rem;
+    --perf-gap: 1.24rem;
+
+    padding: 0 2rem;
+
+    &::after {
+      left: 2rem;
+      width: calc(100% - 4rem);
+    }
+  }
 }

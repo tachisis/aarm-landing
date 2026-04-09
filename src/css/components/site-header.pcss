@@ -20,30 +20,24 @@ html.nav-menu-open .site-header-overlay {
     visibility 0s linear 0s;
 }
 
-@media (--desktop) {
-  .site-header-overlay {
-    display: none;
-  }
-}
-
 .site-header-wrap {
   position: relative;
   z-index: 1000;
   max-width: 72rem;
-  margin: 0 2rem 2.56rem;
-}
-
-@media (--desktop) {
-  .site-header-wrap {
-    margin: 0 auto 2.56rem;
-  }
+  margin: 0 2rem 2.86rem;
 }
 
 .site-header {
   position: relative;
   z-index: 2;
-  padding: 0.83rem 0.75rem 0.95rem;
+  padding: 0.83rem 0.75rem 0.65rem;
   background-color: var(--bg-content);
+
+  & .aaic-logo {
+    width: 1.875rem;
+    height: 1.875rem;
+    aspect-ratio: 1/1;
+  }
 }
 
 .site-header-bar {
@@ -54,30 +48,25 @@ html.nav-menu-open .site-header-overlay {
 
 .site-header-title {
   position: relative;
-}
 
-.site-header-title a {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
+  & a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
 
-.site-header-title span {
-  display: inline-block;
-  max-width: 120px;
-  font-size: var(--text-xxs);
-  line-height: normal;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-}
+  & span {
+    display: inline-block;
 
-.site-header .aaic-logo {
-  width: 30px;
-  height: 30px;
+    font-size: var(--text-xxs);
+    line-height: normal;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
 }
 
 .site-header-drop {
@@ -143,6 +132,34 @@ html.nav-menu-open body {
 }
 
 @media (--desktop) {
+  .site-header-overlay {
+    display: none;
+  }
+
+  .site-header-wrap {
+    margin: 0 auto 1.47rem;
+  }
+
+  .site-header {
+    clip-path: polygon(0% 92.6093%, 100% 100%, 100% 0%, 0% 0%);
+    padding: 0.99rem 1rem 1.57rem;
+
+    & .aaic-logo {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  .site-header-title {
+    & a {
+      gap: 0.8rem;
+    }
+
+    & span {
+      font-size: var(--text-base);
+    }
+  }
+
   .burger {
     display: none;
   }
@@ -155,7 +172,7 @@ html.nav-menu-open body {
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 0.75rem;
+    right: -1.8rem;
     left: auto;
     display: flex;
     align-items: center;
@@ -175,16 +192,19 @@ html.nav-menu-open body {
   .site-header-nav {
     & ul {
       flex-direction: row;
+      align-items: center;
       gap: 1.5rem;
       padding: 0;
+
       background: none;
       mix-blend-mode: normal;
-      font-size: var(--text-xxs);
-      font-weight: 700;
+
+      font-size: var(--text-sm);
     }
 
     .embossing-tape-title {
-      transform: none;
+      padding: 0.2rem 3rem 0.2rem 0.5rem;
+      font-size: var(--text-sm);
     }
   }
 }
