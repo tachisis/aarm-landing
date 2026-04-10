@@ -348,7 +348,7 @@
   }
 
   .specialisms-01 {
-    margin-top: 2.5rem;
+    margin-top: 2.4rem;
 
     &.folder {
       padding: 0 5.06rem 12.19rem 10.06rem;
@@ -372,7 +372,7 @@
 
     & .specialisms-text {
       position: relative;
-      top: -3.5rem;
+      top: -3rem;
       display: flex;
       gap: 3.6rem;
 
@@ -404,11 +404,12 @@
   }
 
   .specialisms-02 {
-    margin: -9.2rem -1.1rem 0 -6.52rem;
+    margin: -9rem -1.1rem 0 -6.52rem;
 
     &.folder {
       padding-top: 0;
       padding-left: 3.5rem;
+      padding-bottom: 7.4rem;
     }
 
     display: flex;
@@ -447,6 +448,183 @@
     & .specialisms-heading {
       padding: 0 0 0 0;
       font-size: var(--text-lg);
+    }
+  }
+
+  .specialisms-03 {
+    margin: -4.2rem -3rem 2.81rem 0;
+
+    & .folder-tab {
+      left: 1.6rem;
+    }
+
+    &.folder {
+      padding-top: 1.9rem;
+      padding-bottom: 16.84rem;
+    }
+
+    & .specialisms-text {
+      display: flex;
+      flex-wrap: wrap;
+
+      margin: 0 8.5rem 0 4.1rem;
+      padding: 3.9rem 1rem 17.6rem 2.4rem;
+
+      & p {
+        flex: 0 0 50%;
+        padding-right: 2rem;
+
+        font-size: var(--text-xs);
+      }
+
+      & p + p {
+        margin: 0;
+      }
+
+      & p:last-child {
+        padding-left: 0.4rem;
+        padding-right: 6rem;
+      }
+    }
+
+    & .specialisms-heading {
+      flex: 0 0 100%;
+      font-size: var(--text-lg);
+
+      margin: 0 0 1.1rem;
+    }
+
+    & .specialisms-illustration {
+      position: absolute;
+      left: -1.25rem;
+      bottom: -5.7rem;
+      margin: 0;
+      padding: 0;
+      width: calc(100% + 2.5rem);
+
+      aspect-ratio: 1206 / 562;
+
+      border-radius: 0;
+      box-shadow: none;
+      background: url("../images/specialisms-03-bg.svg") no-repeat center / 100%
+        100%;
+
+      filter: drop-shadow(0 -10px 17px rgba(0, 0, 0, 0.25));
+
+      & img {
+        margin: 0;
+        position: absolute;
+        top: -2.3rem;
+        right: 4.25rem;
+        z-index: 19;
+
+        max-width: 72.5%;
+      }
+
+      &::before {
+        top: -0.8rem;
+        right: 3.6rem;
+        width: 2rem;
+        height: 5.98763rem;
+        transform: rotate(34.27deg);
+      }
+
+      &::after {
+        top: 2.1rem;
+        left: 20%;
+        bottom: auto;
+        width: 11.98219rem;
+        height: 23.945rem;
+        transform: rotate(-2.893deg);
+        background: linear-gradient(180deg, #d1d3c5 0%, #bdbfb1 100%);
+        mix-blend-mode: normal;
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 16rem;
+      height: 19rem;
+      aspect-ratio: 16/19;
+      background: url("../images/mark.png") no-repeat;
+      background-size: contain;
+      mix-blend-mode: multiply;
+      position: absolute;
+      top: -10.66rem;
+      right: 2.12rem;
+      z-index: 20;
+    }
+  }
+
+  .specialisms-04 {
+    position: relative;
+    margin: 3.3rem 1rem 0 -1rem;
+
+    & .folder-tab--right {
+      right: auto !important;
+      left: 2.7rem;
+      padding: 0.5rem 0 0.95rem 2rem !important;
+      text-align: left !important;
+      clip-path: path(
+        "M16.5 13C16.5 5.8203 22.3203 0 29.5 0H86.6729C91.2213 0 95.4389 2.37716 97.7942 6.26824L113.706 32.5553C116.061 36.4463 120.279 38.8235 124.827 38.8235H148C150.209 38.8235 152 40.6144 152 42.8235V51.5H0V38.8235H3.5C10.6797 38.8235 16.5 33.0032 16.5 25.8235V13Z"
+      ) !important;
+    }
+
+    &.folder {
+      padding-top: 1.4rem;
+      padding-left: 3.9rem;
+      padding-bottom: 20.62rem;
+    }
+
+    & .specialisms-illustration {
+      max-width: 54.5rem;
+      top: 17.38rem;
+      left: 6rem;
+      right: auto;
+      bottom: auto;
+      z-index: 20;
+    }
+
+    & .specialisms-heading {
+      margin-bottom: 1rem;
+      max-width: 40%;
+      font-size: var(--text-lg);
+    }
+
+    .specialisms-text {
+      margin: 0;
+      padding: 0.8rem 0 0 2.31rem;
+
+      max-width: 78.5%;
+
+      & p {
+        font-size: var(--text-xs);
+      }
+
+      &::before {
+        left: 1.5rem;
+        top: 9.8rem;
+        height: 16.8rem;
+      }
+
+      &::after {
+        right: -7.9rem;
+        top: 16rem;
+        height: 16.8rem;
+      }
+    }
+
+    & .specialisms-text-content {
+      display: flex;
+      margin-right: -8.75rem;
+      margin-left: 5rem;
+      padding-bottom: 26.81rem;
+
+      & > div {
+        flex: 0 0 50%;
+        padding-right: 4rem;
+      }
     }
   }
 }
