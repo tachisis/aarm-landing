@@ -49,3 +49,37 @@
   font-size: var(--text-xs) !important;
   color: var(--text-accent);
 }
+
+@media (--desktop) {
+  .site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 5.2rem 0 3rem;
+
+    text-align: left;
+
+    & p {
+      font-size: var(--text-sm);
+    }
+  }
+
+  .site-footer-address {
+    margin-bottom: 0;
+  }
+
+  .site-footer-contacts {
+    text-align: right;
+
+    & ins {
+      font-size: var(--text-lg);
+    }
+  }
+
+  .site-footer-contacts-email {
+    margin-bottom: 1.2rem;
+  }
+}

@@ -43,12 +43,34 @@
   display: block;
   margin: 1.1rem 0 0 8.42rem;
 
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: -0.55rem;
+    top: 0.1rem;
+
+    width: 6.8125rem;
+    height: 0.5625rem;
+
+    pointer-events: none;
+
+    background-color: var(--text-accent);
+    mask-image: url("../images/main-hero-text-correction-stroke.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: url("../images/main-hero-text-correction-stroke.svg");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+  }
+
   & del {
     text-decoration: none;
   }
 
   & ins {
     position: absolute;
+    z-index: 1;
     top: -1.3rem;
     left: 0.4rem;
 
@@ -61,17 +83,6 @@
 
     color: var(--text-accent);
   }
-}
-
-.main-hero-text-correction-stroke {
-  position: absolute;
-  left: -0.55rem;
-  top: 0.1rem;
-
-  width: 6.8125rem;
-  height: 0.5625rem;
-
-  color: var(--text-accent);
 }
 
 .main-hero-illustration {
@@ -176,18 +187,18 @@
     display: inline-block;
     margin: 0;
 
+    &::after {
+      width: 13rem;
+      height: 1.5rem;
+      left: -0.8rem;
+
+      max-width: none;
+    }
+
     & ins {
       top: -2.5rem;
       left: 0.5rem;
       font-size: var(--text-3xl);
     }
-  }
-
-  .main-hero-text-correction-stroke {
-    width: 13rem;
-    height: 1.5rem;
-    left: -0.8rem;
-
-    max-width: none;
   }
 }

@@ -10,7 +10,7 @@
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 1px;
     width: 100%;
     aspect-ratio: 390 / 138;
     pointer-events: none;
@@ -447,6 +447,136 @@
       height: 1rem;
       background: url("../images/arrow-2.svg") no-repeat;
       background-size: contain;
+    }
+  }
+}
+
+@media (--desktop) {
+  .hiring-us {
+    margin: -9.3rem -2rem calc(9 / 80 * 100%) -12%;
+    padding: 1.3rem 60% 2rem 3.8rem;
+
+    &::after {
+      aspect-ratio: 80 / 9;
+    }
+  }
+
+  .hiring-us-misha {
+    top: -0.9rem;
+    right: 6.9rem;
+    width: 24.25rem;
+    height: 28.08213rem;
+    transform: none;
+    border-radius: 1.60513rem;
+    z-index: 10;
+
+    &::before {
+      top: -0.8rem;
+      right: 3.4rem;
+
+      width: 1.7rem;
+      height: 6.5rem;
+      transform: rotate(5.388deg);
+    }
+  }
+
+  .hiring-us-misha-title {
+    font-size: 1.01375rem;
+    padding: 1.8rem 0 0.2rem 0.35rem;
+
+    &::after {
+      width: 3.6rem;
+      height: 1.5rem;
+      right: 0.7rem;
+    }
+  }
+
+  .hiring-us-title {
+    margin: 0 0 8.5rem -9%;
+    transform: rotate(-3.276deg);
+  }
+
+  .hiring-us-misha-caption {
+    padding: 0.5rem 0.7rem 1.2rem;
+    font-size: 0.7185rem;
+
+    &::after {
+      top: auto;
+      bottom: 0;
+      width: 0.8rem;
+      height: 1.9rem;
+    }
+  }
+
+  .hiring-us-about {
+    dt {
+      font-size: var(--text-lg);
+    }
+
+    dd {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+  }
+
+  .hiring-us-about--01 {
+    margin-bottom: 0.6rem;
+
+    & dt {
+      position: relative;
+      top: -1.5rem;
+    }
+
+    & dd {
+      & ins {
+        top: -3rem;
+        left: 9rem;
+        width: 12rem;
+        transform: none;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .hiring-us-about--02 {
+    margin-bottom: 3rem;
+
+    & dd {
+      & ins {
+        bottom: -2rem;
+        right: 0;
+        width: auto;
+        font-size: var(--text-lg);
+
+        &::after {
+          right: auto;
+          left: -1.2rem;
+          transform: scaleX(-1);
+          top: -0.9rem;
+          bottom: auto;
+        }
+      }
+    }
+  }
+
+  .hiring-us-note {
+    margin-left: 7.2rem;
+    padding-right: 0;
+    font-size: var(--text-sm);
+    font-weight: 500;
+
+    & ins {
+      top: -3rem;
+      bottom: auto;
+      right: auto;
+      left: -4.5rem;
+      font-size: var(--text-lg);
+
+      &::after {
+        display: none;
+      }
     }
   }
 }

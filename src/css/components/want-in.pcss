@@ -30,3 +30,50 @@
     margin-left: 3.1rem;
   }
 }
+
+@media (--desktop) {
+  .want-in {
+    margin: 8.3rem -3rem 0;
+    padding: 3rem 3rem 1.3rem 61%;
+
+    background-image: repeating-linear-gradient(
+      to right,
+      rgba(48, 47, 51, 0.1) 0,
+      rgba(48, 47, 51, 0.1) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+    background-position: top;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+  }
+
+  .want-in-illustration {
+    position: absolute;
+    top: 2rem;
+    left: 3rem;
+
+    max-width: 35.5rem;
+  }
+
+  .want-in-title {
+    transform: rotate(2.908deg);
+  }
+
+  .want-in-text {
+    padding: 1.2rem 1rem 0 1rem;
+
+    a:not([class]) {
+      color: var(--text-accent);
+    }
+
+    & p {
+      font-size: 1.25rem;
+    }
+
+    p:nth-child(2),
+    p:nth-child(3) {
+      margin-left: 5rem;
+    }
+  }
+}

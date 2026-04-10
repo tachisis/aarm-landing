@@ -64,6 +64,8 @@
 
 @media (--desktop) {
   .site-content {
+    --site-content-trapezoid-h: 3.6875rem;
+
     overflow-x: visible;
   }
 
@@ -72,7 +74,7 @@
     --site-content-dash-len: 10px;
     --site-content-dash-gap: 10px;
 
-    padding: 2rem 3rem;
+    padding: 2rem 3rem 2.5rem;
 
     border-style: solid;
     border-color: transparent;
@@ -108,8 +110,8 @@
     padding: 0 2rem;
 
     &::after {
-      left: 2rem;
-      width: calc(100% - 4rem);
+      left: 2.5rem;
+      width: calc(100% - 5rem);
     }
   }
 }
