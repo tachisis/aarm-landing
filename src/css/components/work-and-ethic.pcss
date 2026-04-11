@@ -1,218 +1,664 @@
-/* .work-ethic {
+.work-ethic {
+  & .site-content-container {
+    &::after {
+      display: none;
+    }
+  }
+
+  & .site-content-wrapper {
+    padding-bottom: 0;
+  }
 }
 
-.work-ethic-hero {
-  margin: 0 -0.5rem 0;
-  padding: 2rem 1rem 2.5rem;
+.work-ethic-hero-title {
+  width: 17.9555rem;
+  height: 5.2315rem;
+  margin: 0.6rem 0 1rem 0.3rem;
 
-  background: var(--bg-septenary);
-}
-
-.work-ethic-page-title {
-  margin: 0 0 1.75rem;
-
-  font-family: "Aaic", "IBM Plex Sans", sans-serif;
-  font-size: var(--text-3xl);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  text-transform: lowercase;
+  background-image: url("../images/w-e-title.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .work-ethic-intro-box {
-  padding: 1.25rem 1.1rem;
-
-  background: #e3e3e3;
-  border: 1px solid rgba(48, 47, 51, 0.12);
-}
-
-.work-ethic-intro-box p {
-  margin: 0 0 0.85rem;
-
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: var(--text-sm);
-  line-height: 1.45;
-}
-
-.work-ethic-intro-box p:last-child {
-  margin-bottom: 0;
-}
-
-.work-ethic-section {
-  margin: 0 -0.5rem;
-  padding: 2.25rem 1rem 2.5rem;
-}
-
-.work-ethic-section--paper {
-  background: var(--bg-content);
-}
-
-.work-ethic-section--tan {
-  background: var(--bg-quinary);
-}
-
-.work-ethic-section--slate {
   position: relative;
+  min-width: 20rem;
+  margin: 0 -1rem 1.5rem 0.5rem;
+  padding: 1.3rem 1rem 1.2rem 1.4rem;
 
-  padding-bottom: 3rem;
+  background: var(--bg-senary);
 
-  background: #6a6a6a;
-  color: var(--text-invert);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+
+  & p {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-style: italic;
+    font-size: 0.77238rem;
+    line-height: normal;
+  }
+
+  & p:nth-child(2) {
+    margin-left: 3.05rem;
+    margin-bottom: 1.3rem;
+  }
+
+  & p + p {
+    margin: 1.05rem 0 0;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 2.927rem;
+    height: 2.79rem;
+    transform: rotate(5.864deg);
+    position: absolute;
+    bottom: 1.3rem;
+    right: -2.3rem;
+    background: url(../images/clip-1.svg) no-repeat left top;
+    background-size: 100% 100%;
+  }
 }
 
-.work-ethic-section--slate .work-ethic-kicker,
-.work-ethic-section--slate .work-ethic-body,
-.work-ethic-section--slate .work-ethic-quote {
-  color: var(--text-invert);
-}
-
-.work-ethic-kicker {
-  margin: 0 0 1.25rem;
-
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: var(--text-xs);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  line-height: 1.3;
-  text-transform: uppercase;
-}
-
-.work-ethic-body {
+.work-ethic-heading {
   margin: 0 0 1rem;
 
   font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: var(--text-sm);
-  line-height: 1.55;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
 }
 
-.work-ethic-body:last-child {
-  margin-bottom: 0;
-}
+.work-ethic-text {
+  & p {
+    margin: 0 0 1rem;
 
-.work-ethic-quote {
-  margin: 1.25rem 0 0;
-  padding-left: 1rem;
-
-  border-left: 2px solid rgba(48, 47, 51, 0.2);
-
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: var(--text-sm);
-  font-style: italic;
-  line-height: 1.55;
-}
-
-.work-ethic-section--slate .work-ethic-quote {
-  border-left-color: rgba(255, 255, 255, 0.35);
-}
-
-.work-ethic-quote p {
-  margin: 0 0 0.65rem;
-
-  font-size: inherit;
-}
-
-.work-ethic-quote p:last-child {
-  margin-bottom: 0;
-}
-
-.work-ethic-figure {
-  margin: 1.75rem auto 0;
-  max-width: 16rem;
-}
-
-.work-ethic-figure svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-
-.work-ethic-paper-panel {
-  position: relative;
-
-  margin: 1.5rem -0.25rem 0;
-  padding: 2rem 1.25rem 2.25rem;
-
-  background: #ede6d3;
-  color: var(--text-primary);
-
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
-
-  clip-path: polygon(
-    0% 1.2%,
-    3% 0%,
-    12% 0.8%,
-    22% 0%,
-    35% 1.1%,
-    48% 0.3%,
-    62% 0%,
-    78% 0.9%,
-    92% 0.2%,
-    100% 1%,
-    99.5% 12%,
-    100% 28%,
-    99% 44%,
-    100% 62%,
-    99.2% 78%,
-    100% 94%,
-    97% 100%,
-    82% 99.2%,
-    65% 100%,
-    48% 99.4%,
-    32% 100%,
-    15% 99.1%,
-    0% 100%,
-    0.8% 85%,
-    0% 68%,
-    0.5% 52%,
-    0% 35%,
-    0.6% 18%
-  );
-}
-
-.work-ethic-paper-panel .work-ethic-kicker {
-  margin-top: 0;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
 }
 
 .work-ethic-handwritten {
-  margin: 1.75rem 0 0;
-
-  font-family: "IBM Plex Sans", cursive;
-  font-size: var(--text-base);
+  font-family: "Aaic", sans-serif;
   font-style: italic;
-  font-weight: 500;
-  line-height: 1.4;
-  color: #2a4d9b;
+  color: var(--text-accent);
 }
 
-.work-ethic-section-heading-row {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+.work-ethic-section--cappuccino {
+  & .work-ethic-heading {
+    padding-right: 50%;
+  }
+
+  & .work-ethic-text {
+    & p:first-child {
+      margin-bottom: 1.4rem;
+    }
+
+    & p {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+    }
+
+    & .work-ethic-text-quote {
+      padding-left: 3.4rem;
+      font-style: italic;
+    }
+  }
+}
+
+.work-ethic-section--domainless {
+  margin-bottom: 2.2rem;
+
+  & .work-ethic-illustration {
+    position: relative;
+
+    left: 1.1rem;
+
+    min-width: 23.6rem;
+    padding: 1.61rem 6.3rem 29.1rem 3rem;
+    background: var(--bg-octonary);
+
+    box-shadow: 0 0.423px 1.693px 0 rgba(0, 0, 0, 0.15);
+
+    & img {
+      mix-blend-mode: multiply;
+    }
+  }
+
+  & .work-ethic-heading {
+    padding-right: 30%;
+    margin-bottom: 2.2rem;
+  }
+
+  & .work-ethic-text {
+    position: relative;
+
+    min-width: 23.6rem;
+    margin: -27rem 0 0 -2.8rem;
+    padding: 1.5rem 1.5rem 0.8rem 2.8rem;
+
+    background: var(--bg-quinary);
+    box-shadow: 0 0.423px 1.693px 0 rgba(0, 0, 0, 0.15);
+
+    & p {
+      padding: 0 0 0 3.4rem;
+      line-height: 1.2;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 1rem;
+      top: 4.8rem;
+      width: 1.92352rem;
+      height: 19.14095rem;
+      background: url("../images/folder-clip.svg") no-repeat center center;
+      background-size: contain;
+    }
+  }
+}
+
+.work-ethic-section--engineers {
+  margin-bottom: 1.5rem;
+
+  & .work-ethic-heading {
+    padding-right: 50%;
+    margin-bottom: 1rem;
+  }
+
+  & .work-ethic-text {
+    & p {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      line-height: 1.3;
+    }
+  }
+}
+
+.work-ethic-section-join {
+  position: relative;
+  z-index: 20;
+
+  padding: 0.75rem 0.75rem 2.55rem;
+  background: var(--bg-senary);
+
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2rem;
+    height: 2rem;
+    background: inherit;
+  }
+}
+
+.work-ethic-section--frontier {
+  position: relative;
+
+  padding: 1.5rem;
+
+  margin: 0 -3.5rem 1.75rem 0;
+
+  background: var(--bg-quinary);
+
+  & .work-ethic-handwritten {
+    margin: 0 1rem;
+    font-size: 1.3rem;
+    transform: rotate(-2.525deg);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    width: 100%;
+    aspect-ratio: 390 / 138;
+    pointer-events: none;
+    transform: translateY(100%);
+    z-index: 10;
+
+    background-color: var(--bg-quinary);
+    clip-path: polygon(
+      0% 2.18%,
+      0.47% 1.95%,
+      1.65% 1.56%,
+      3.14% 1.49%,
+      4.59% 2.17%,
+      5.43% 3.24%,
+      6.06% 4.46%,
+      6.62% 5.7%,
+      7.22% 6.83%,
+      7.86% 7.49%,
+      8.64% 7.8%,
+      9.71% 8.04%,
+      11.21% 8.47%,
+      13% 8.81%,
+      15.12% 8.9%,
+      17.26% 8.92%,
+      19.12% 9.02%,
+      21.12% 9.5%,
+      22.37% 10.19%,
+      23.11% 10.92%,
+      23.57% 11.48%,
+      24.11% 12.39%,
+      24.53% 13.62%,
+      24.86% 14.77%,
+      25.16% 15.44%,
+      25.76% 16.82%,
+      26.4% 19.08%,
+      27.03% 21.2%,
+      27.6% 22.15%,
+      27.85% 21.67%,
+      28.16% 20.59%,
+      28.62% 19.44%,
+      29.35% 18.73%,
+      30.31% 18.56%,
+      31.45% 18.55%,
+      32.6% 18.67%,
+      33.58% 18.86%,
+      34.26% 19.11%,
+      34.66% 19.45%,
+      34.88% 19.87%,
+      34.99% 20.36%,
+      35.37% 22.61%,
+      35.69% 24.9%,
+      35.95% 26.87%,
+      36.16% 28.15%,
+      36.31% 28.08%,
+      36.42% 26.87%,
+      36.52% 25.24%,
+      36.59% 23.93%,
+      36.82% 23.17%,
+      37.14% 24.19%,
+      37.51% 25.72%,
+      37.86% 26.52%,
+      38.32% 26.14%,
+      38.73% 25.25%,
+      39.11% 24.27%,
+      39.5% 23.64%,
+      39.95% 23.82%,
+      40.47% 24.78%,
+      41.09% 26.23%,
+      41.84% 27.87%,
+      42.9% 29.85%,
+      43.8% 31.17%,
+      44.72% 32.14%,
+      45.83% 33.07%,
+      46.21% 33.69%,
+      46.56% 34.87%,
+      46.91% 36.59%,
+      47.29% 38.81%,
+      47.73% 41.09%,
+      48.3% 43.64%,
+      48.99% 46.41%,
+      49.8% 49.32%,
+      50.91% 52.93%,
+      51.68% 54.99%,
+      52.22% 56.14%,
+      52.67% 57%,
+      53.07% 57.17%,
+      53.54% 56.43%,
+      54.16% 55.37%,
+      54.98% 54.54%,
+      55.58% 54.27%,
+      56.1% 54.28%,
+      56.56% 54.76%,
+      56.99% 55.9%,
+      57.07% 56.12%,
+      57.14% 56.08%,
+      57.2% 55.68%,
+      57.24% 54.83%,
+      57.27% 53.48%,
+      57.29% 51.86%,
+      57.31% 50.26%,
+      57.34% 48.97%,
+      57.38% 48.21%,
+      57.44% 47.93%,
+      57.51% 47.99%,
+      57.59% 48.25%,
+      58.19% 49.73%,
+      58.95% 50.48%,
+      59.86% 50.57%,
+      60.9% 50.04%,
+      61.1% 49.3%,
+      61.21% 47.82%,
+      61.26% 46.08%,
+      61.32% 44.57%,
+      61.87% 42.68%,
+      62.89% 43.18%,
+      64.09% 44.88%,
+      65.16% 46.6%,
+      65.07% 47.23%,
+      64.61% 48.49%,
+      63.9% 50.04%,
+      63.03% 51.52%,
+      62.81% 52.1%,
+      62.72% 52.85%,
+      62.73% 53.62%,
+      62.79% 54.26%,
+      63.13% 55.71%,
+      63.6% 56.37%,
+      64.26% 56.66%,
+      65.12% 57%,
+      66.52% 57.22%,
+      67.7% 56.53%,
+      68.58% 55.26%,
+      69.11% 53.73%,
+      69.61% 52.64%,
+      70.39% 52.08%,
+      71.27% 51.66%,
+      72.1% 50.99%,
+      72.56% 50.92%,
+      72.99% 51.63%,
+      73.38% 52.78%,
+      73.7% 53.99%,
+      74.05% 55.28%,
+      74.46% 56.61%,
+      74.89% 57.85%,
+      75.33% 58.91%,
+      75.44% 58.8%,
+      75.51% 58.09%,
+      75.56% 57.15%,
+      75.6% 56.34%,
+      76.18% 55.03%,
+      77.2% 56.49%,
+      78.52% 58.99%,
+      80.01% 60.83%,
+      80.49% 61.07%,
+      80.88% 61.13%,
+      81.2% 61.01%,
+      81.49% 60.69%,
+      82.31% 62.13%,
+      83.35% 66.99%,
+      84.54% 72.93%,
+      85.82% 77.64%,
+      86.8% 78.71%,
+      87.82% 77.84%,
+      88.75% 75.96%,
+      89.48% 73.96%,
+      90.28% 72.62%,
+      90.82% 73.31%,
+      91.15% 74.7%,
+      91.33% 75.46%,
+      91.43% 74.97%,
+      91.54% 73.76%,
+      91.67% 72.24%,
+      91.85% 70.82%,
+      92.04% 70.41%,
+      92.39% 70.93%,
+      93% 72.78%,
+      94% 76.35%,
+      95.41% 81.86%,
+      97.06% 88.44%,
+      98.67% 94.87%,
+      100% 99.95%,
+      100% 0%,
+      0% 0%
+    );
+  }
+}
+
+.work-ethic-section--cathedrals {
+  & .work-ethic-illustration {
+    margin-bottom: 0.5rem;
+    mix-blend-mode: multiply;
+  }
+
+  & .work-ethic-text {
+    & p {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+    }
+  }
 }
 
 @media (--desktop) {
   .work-ethic-hero {
-    margin-left: -3rem;
-    margin-right: -3rem;
-    padding: 2.5rem 3rem 3rem;
+    margin: 0 -3rem 3rem;
+    padding: 3.7rem 3rem 1.1rem;
+    background-image: repeating-linear-gradient(
+      to right,
+      rgba(48, 47, 51, 0.1) 0,
+      rgba(48, 47, 51, 0.1) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+    background-position: bottom;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
   }
 
-  .work-ethic-section {
-    margin-left: -3rem;
-    margin-right: -3rem;
-    padding: 2.75rem 3rem 3rem;
+  .work-ethic-hero-title {
+    width: 34.8815rem;
+    height: 10.17288rem;
+
+    margin: 0 0 3.6rem 0;
   }
 
-  .work-ethic-section-heading-row {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 2rem;
+  .work-ethic-intro-box {
+    position: absolute;
+    top: 3rem;
+    right: 1rem;
+    width: 34.5rem;
+    margin: 0;
+    padding: 2.7rem 2.8rem 3.1rem;
+
+    & p {
+      font-size: 1.25rem;
+    }
+
+    & p + p {
+      margin-top: 1.6rem;
+    }
+
+    & p:nth-child(2) {
+      margin-left: 4.9rem;
+      margin-bottom: 2.1rem;
+    }
+
+    &::before {
+      bottom: 1.6rem;
+      right: -4.5rem;
+      width: 5.83563rem;
+      height: 5.5625rem;
+      transform: rotate(5.864deg);
+    }
   }
 
-  .work-ethic-section-heading-row .work-ethic-figure {
-    flex-shrink: 0;
-    margin-top: 0;
-    max-width: 11rem;
+  .work-ethic-heading {
+    font-size: 1.5rem;
+
+    margin-bottom: 2.4rem;
   }
-} */
+
+  .work-ethic-text {
+    & p {
+      font-size: 1.25rem;
+    }
+  }
+
+  .work-ethic-section--cappuccino {
+    & .work-ethic-heading {
+      padding-right: 80%;
+    }
+
+    & .work-ethic-text {
+      column-count: 2;
+      column-gap: 0;
+
+      & p {
+        padding-right: 4rem;
+      }
+
+      & p + p {
+        margin-top: 3.2rem;
+      }
+
+      & .work-ethic-text-quote {
+        padding-left: 0;
+      }
+
+      & p:nth-child(2) {
+        margin-top: 2.6rem;
+        padding-left: 5rem !important;
+      }
+    }
+  }
+
+  .work-ethic-section--domainless {
+    position: relative;
+    margin: 0 -3rem 2.5rem;
+    padding: 0 3rem 3.9rem;
+    background-image: repeating-linear-gradient(
+      to right,
+      rgba(48, 47, 51, 0.1) 0,
+      rgba(48, 47, 51, 0.1) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+    background-position: bottom;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+
+    & .work-ethic-illustration {
+      position: absolute;
+
+      top: 2rem;
+      left: -5.5rem;
+      right: 3rem;
+
+      padding: 2rem 0 2rem 72%;
+
+      & img {
+        width: 18.0625rem;
+        height: 24.875rem;
+        aspect-ratio: 61/84;
+      }
+    }
+
+    & .work-ethic-heading {
+      padding-right: 0;
+      margin-bottom: 2.3rem;
+    }
+
+    & .work-ethic-text {
+      max-width: 68%;
+      margin: 0;
+      left: -7.8rem;
+
+      padding: 5.9rem 5rem 4rem 7.7rem;
+
+      & p {
+        padding-left: 5.3rem;
+        margin-bottom: 1.6rem;
+        font-size: 0.875rem;
+      }
+
+      &::before {
+        top: 0;
+        left: 2.9rem;
+        width: 2.94688rem;
+        height: 29.325rem;
+      }
+    }
+  }
+
+  .work-ethic-section--engineers {
+    margin-bottom: 3.8rem;
+
+    & .work-ethic-heading {
+      margin-bottom: 2.3rem;
+    }
+
+    & .work-ethic-text {
+      display: flex;
+
+      & p {
+        flex: 0 0 50%;
+        padding-right: 6rem;
+        margin-bottom: 0;
+
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  .work-ethic-section-join {
+    margin: 0 0 0 -1.8rem;
+    padding: 1.7rem 1.9rem 2rem;
+  }
+
+  .work-ethic-section--frontier {
+    margin-right: -10rem;
+    padding: 4.5rem 5.6rem 4.7rem;
+
+    & .work-ethic-heading {
+      max-width: 47%;
+
+      margin-bottom: 1.8rem;
+    }
+
+    & .work-ethic-text {
+      position: relative;
+      display: flex;
+
+      & p {
+        flex: 0 0 50%;
+        padding-right: 6rem;
+        margin-bottom: 0;
+
+        font-size: 0.875rem;
+      }
+    }
+
+    & .work-ethic-handwritten {
+      position: absolute;
+      bottom: -3rem;
+      right: -6rem;
+
+      z-index: 20;
+
+      max-width: 30rem;
+
+      font-size: 2rem !important;
+    }
+
+    &::after {
+      aspect-ratio: 78 / 9;
+    }
+  }
+
+  .work-ethic-section--cathedrals {
+    position: relative;
+    padding: 0.9rem 58% 0 0;
+
+    & .work-ethic-illustration {
+      position: absolute;
+      top: 1rem;
+      right: 1.7rem;
+      margin: 0;
+
+      width: 33.0625rem;
+      height: 19.9375rem;
+      aspect-ratio: 131/79;
+      transform: scaleX(-1);
+    }
+
+    & .work-ethic-heading {
+      max-width: 22rem;
+
+      margin-bottom: 1.8rem;
+    }
+
+    & .work-ethic-text {
+      & p {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
