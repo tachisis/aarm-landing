@@ -11,391 +11,319 @@
     />
   </head>
   <body>
-    <include src="partials/header.html"></include>
-    <main class="site-content the-giants">
-      <div class="site-content-container">
-        <div class="site-content-wrapper">
-          <header class="the-giants-hero">
-            <nav
-              class="the-giants-hero-nav"
-              aria-label="Page navigation"
-            >
-              <a href="#">INDEX</a>
-              <a href="#">INFO</a>
-            </nav>
-            <h1 class="the-giants-hero-title">The Giants</h1>
-            <p class="the-giants-hero-lead">
-              A series of profiles on the giants whose shoulders we stand on.
-              From the earliest days of computing to the present, these are the
-              people who have shaped our world.
-            </p>
-            <figure class="the-giants-hero-divider" aria-hidden="true">
-              <img
-                src="images/the-giants/hero-divider.png"
-                alt=""
-                width="1200"
-                height="48"
-              />
-            </figure>
-          </header>
+    <div class="site-overflow-container the-giants">
+      <include src="partials/header.html"></include>
+      <main class="site-content">
+        <div class="site-content-container">
+          <div class="site-content-wrapper">
+            <section class="the-giants-hero">
+              <h2 class="the-giants-hero-title dot-matrix-printer">
+                <span class="visually-hidden">The Giants</span>
+              </h2>
+              <div class="the-giants-hero-text">
+                <div>
+                  <p>In 1675,</p>
+                  <p>
+                    Newton wrote <a href="#">a letter</a> to Robert Hooke containing the
+                    well-known line:
+                  </p>
+                  <blockquote class="the-giants-hero-quote">
+                    <p>
+                      “If I have seen further it is by standing on the shoulders of giants.”
+                    </p>
+                  </blockquote>
+                </div>
+                <p>
+                  Here, then, are the giants upon whose shoulders we stand for this purpose —
+                  with Newton, somewhat ironically, not included among them.
+                </p>
+              </div>
+            </section>
 
-          <article class="the-giants-profile">
-            <figure class="the-giants-portrait">
-              <img
-                src="images/the-giants/alan-turing.png"
-                alt="Portrait of Alan Turing"
-                align="left"
-                width="280"
-                height="360"
-              />
-            </figure>
-            <h2 class="the-giants-name">ALAN TURING</h2>
-            <p class="the-giants-tags">
-              <a href="#">Logic</a>, <a href="#">Mathematics</a>,
-              <a href="#">Computing</a>, <a href="#">Cryptography</a>
-            </p>
-            <div class="the-giants-bio">
-              <p>
-                <a href="#">Alan Turing</a> formalised the limits of what
-                machines can compute, gave us the universal machine idea that
-                still describes how computers work, and helped break
-                enemy ciphers during the Second World War. His 1950 paper on
-                <a href="#">machine intelligence</a> asked whether computers
-                could think — and proposed an operational test we still argue
-                about today.
-              </p>
-              <p>
-                Prosecuted for his sexuality and barred from the work he loved,
-                he died in 1954. His legacy runs through every branch of
-                <a href="#">computer science</a> and every conversation about
-                <a href="#">artificial intelligence</a>.
-              </p>
-            </div>
-          </article>
+            <section class="the-giants-profile the-giants-profile--kay">
+              <figure class="the-giants-portrait">
+                <img
+                  src="images/alan-kay.png"
+                  alt="Portrait of Alan Kay"
+                  width="280"
+                />
+              </figure>
+              <h2 class="the-giants-name">Alan Kay</h2>
+              <ul class="the-giants-links">
+                <li><a href="#">Wikipedia</a></li>
+                <li><a href="#">Doing with Images Makes Symbols (1987)</a></li>
+                <li><a href="#">The Computer Revolution Hasn't Happened Yet (1997)</a></li>
+              </ul>
+              <div class="the-giants-bio">
+                <p>In 1975, a twelve-year-old girl sat down at a terminal at Xerox PARC and wrote, in an afternoon, a working animation program in <a href="#">Smalltalk</a>.</p>
+                <p><a href="#">Alan Kay</a> tells this story not as a boast but as evidence — evidence that the computer, properly designed, could be as natural and as generative a medium as drawing or writing.</p>
+                <p>Kay had built Smalltalk for exactly this purpose: a programming language organised around objects that send messages to each other, clean enough for a child to reason about, expressive enough to build almost anything.</p>
+                <p>The interface paradigm that emerged from his group's work at <a href="#">PARC</a> — windows, icons, menus, the mouse — went on to become the visual language of every desktop and smartphone on the planet.</p>
+                <p>Kay has been pointing out ever since that this is only a fraction of what was intended.</p>
+                <p><a href="#">The Dynabook</a>, his 1968 vision of a portable personal computer for children — networked, dynamic, used for genuine intellectual exploration — remains, in his view, unrealised.</p>
+                <p>He is not wrong.</p>
+              </div>
+            </section>
 
-          <article class="the-giants-profile">
-            <figure class="the-giants-portrait">
-              <img
-                src="images/the-giants/ada-lovelace.png"
-                alt="Portrait of Ada Lovelace"
-                align="right"
-                width="280"
-                height="360"
-              />
-            </figure>
-            <h2 class="the-giants-name">ADA LOVELACE</h2>
-            <p class="the-giants-tags">
-              <a href="#">Mathematics</a>, <a href="#">Computing</a>
-            </p>
-            <div class="the-giants-bio">
-              <p>
-                <a href="#">Ada Lovelace</a> collaborated with Charles Babbage
-                on the Analytical Engine and wrote what is often regarded as the
-                first published algorithm intended for a machine. She saw that
-                numbers could stand for symbols, music, and more — not just
-                arithmetic — a leap toward general-purpose computation.
-              </p>
-              <p>
-                She died young, in 1852, but her notes anticipate ideas that
-                would take a century to build: programs, loops, and the
-                creative partnership between human intent and mechanical
-                execution.
-              </p>
-            </div>
-          </article>
+            <section class="the-giants-profile the-giants-profile--victor folder folder--quaternary">
+              <span class="folder-tab"></span>
+              <div class="the-giants-profile-content">
+                <figure class="the-giants-portrait">
+                  <img
+                    src="images/bret-victor.png"
+                    alt="Portrait of Bret Victor"
+                    width="280"
+                  />
+                </figure>
+                <h2 class="the-giants-name">Bret Victor</h2>
+                <ul class="the-giants-links">
+                  <li><a href="#">Wikipedia</a></li>
+                  <li><a href="#">worrydream.com</a></li>
+                  <li><a href="#">Dynamicland</a></li>
+                  <li><a href="#">Inventing on Principle (2012)</a></li>
+                  <li><a href="#">The Future of Programming (2013)</a></li>
+                </ul>
+                <div class="the-giants-bio">
+                  <p>In a 2012 talk at a student software conference in Montreal, <a href="#">Bret Victor</a> sat down at a laptop and, while writing a simple game in real time, moved a single slider — and the entire physics of the game shifted on screen, instantly, without compiling, without waiting, without breaking the thread of thought.</p>
+                  <p>The audience laughed, not because it was funny but because they recognised, somewhere in their bodies, that this was how it should have always worked.</p>
+                  <p>Victor's argument — that creators need an immediate connection to what they're making, that a delay of even a few seconds between decision and consequence is enough to quietly lobotomise the creative process — sounds obvious once stated, and that's precisely how you know it's true.</p>
+                  <p>He had worked at Apple helping design the earliest concepts for the iPad, but eventually left to pursue the idea to its logical conclusion.</p>
+                  <p>Today he runs <a href="#">Dynamicland</a>, a non-profit research lab in Oakland where the computer is not a screen on a desk but the entire room: projectors and cameras turn physical surfaces into live computational environments, and people work together with their hands, with paper, with real objects.</p>
+                  <p>The system is called Realtalk.</p>
+                  <p>It is, at the moment, the most interesting thing being built in computing, and almost nobody has heard of it.</p>
+                </div>
+              </div>
+            </section>
+            <section class="the-giants-profile the-giants-profile--mcilroy">
+              <figure class="the-giants-portrait">
+                <img
+                  src="images/doug-mcilroy.png"
+                  alt="Portrait of Doug McIlroy"
+                  width="280"
+                />
+              </figure>
+              <h2 class="the-giants-name">Doug McIlroy</h2>
+              <ul class="the-giants-links the-giants-links--no-markers">
+                <li><a href="#">Wikipedia</a></li>
+              </ul> 
+              <div class="the-giants-bio">
+                <p>Somewhere in the early 1970s, a Bell Labs engineer named Doug McIlroy looked at the growing mass of Unix utilities being written around him and had a thought simple enough to fit on a napkin: programs should do one thing and do it well, and they should work together.</p>
+                <p>The UNIX pipe was his invention, and it is one of the most generative ideas in the history of software.</p>
+                <p>It is a philosophy made executable: keep things small, keep them composable, trust the user to assemble the pieces.</p>
+                <p>McIlroy also invented macros, contributed foundational work on sorting, and spent decades at Bell Labs producing work of quiet, lasting consequence.</p>
+                <p>His periodic critiques of software bloat — of programs that accumulate features until they do everything badly — read today less like complaints than like elegies for a discipline that briefly knew what it was for.</p>
+              </div>
+            </section>
 
-          <article class="the-giants-profile">
-            <figure class="the-giants-portrait">
-              <img
-                src="images/the-giants/john-von-neumann.png"
-                alt="Portrait of John von Neumann"
-                align="left"
-                width="280"
-                height="360"
-              />
-            </figure>
-            <h2 class="the-giants-name">JOHN VON NEUMANN</h2>
-            <p class="the-giants-tags">
-              <a href="#">Physics</a>, <a href="#">Mathematics</a>,
-              <a href="#">Computing</a>, <a href="#">Game theory</a>
-            </p>
-            <div class="the-giants-bio">
-              <p>
-                <a href="#">John von Neumann</a> moved between quantum
-                foundations, explosion physics, and economics with unsettling
-                ease. For computing, his name is attached to the stored-program
-                architecture: instructions and data live in the same memory,
-                the template for nearly every computer since.
-              </p>
-              <p>
-                With <a href="#">Oskar Morgenstern</a>, he co-authored the
-                founding text of modern <a href="#">game theory</a>. He died in
-                1957; the machines he helped design were only beginning to
-                reshape science and society.
-              </p>
-            </div>
-          </article>
+            <section class="the-giants-profile the-giants-profile--rosenblatt">
+                <figure class="the-giants-portrait">
+                  <img
+                    src="images/frank-rosenblatt.png"
+                    alt="Portrait of Frank Rosenblatt"
+                    width="280"
+                  />
+                </figure>
+                <h2 class="the-giants-name">Frank Rosenblatt</h2>
+                <ul class="the-giants-links">
+                  <li><a href="#">Wikipedia</a></li>
+                </ul>
+              <div class="the-giants-bio">
+                <p>In 1957, at the Cornell Aeronautical Laboratory, Frank Rosenblatt built a machine out of motors and potentiometers and wires that could learn to tell the difference between cards marked on the left and cards marked on the right — not because it had been programmed with the rule, but because it had adjusted, through experience, the weights on its connections.</p>
+                <p>He called it the <a href="#">Perceptron</a>.</p>
+                <p>Rosenblatt was a psychologist, and that matters: he was not trying to build a useful tool, he was trying to understand how biological brains acquire knowledge, drawing directly on <a href="#">Donald Hebb's</a> earlier theory that neurons which fire together wire together.</p>
+                <p>The machine was a working hypothesis about cognition.</p>
+                <p><a href="#">The 1969 book by Minsky and Papert</a> that demonstrated its mathematical limitations effectively ended the field for a decade, and Rosenblatt did not live to see it revived — he died in a sailing accident in 1971, aged forty-three.</p>
+                <p>The deep learning systems that now underpin most of modern artificial intelligence are, in their essential architecture, descendants of the thing he built in that laboratory.</p>
+              </div>
+            </section>
 
-          <article class="the-giants-profile">
-            <figure class="the-giants-portrait">
-              <img
-                src="images/the-giants/claude-shannon.png"
-                alt="Portrait of Claude Shannon"
-                align="left"
-                width="280"
-                height="360"
-              />
-            </figure>
-            <h2 class="the-giants-name">CLAUDE SHANNON</h2>
-            <p class="the-giants-tags">
-              <a href="#">Information theory</a>, <a href="#">Mathematics</a>,
-              <a href="#">Engineering</a>
-            </p>
-            <div class="the-giants-bio">
-              <p>
-                <a href="#">Claude Shannon</a> asked how much information a
-                channel can carry and how to protect it from noise. His 1948
-                paper created <a href="#">information theory</a> — the
-                mathematical backbone of telecommunications, compression, and
-                much of what we now call data.
-              </p>
-              <p>
-                At Bell Labs and MIT he also built juggling robots, chess
-                machines, and unicycle robots, treating serious mathematics and
-                playful hardware as one continuum. He died in 2001, as digital
-                networks swallowed the planet he had quietly wired in theory.
-              </p>
-            </div>
-          </article>
+            <section class="the-giants-profile the-giants-profile--sutherland">
+                <figure class="the-giants-portrait">
+                  <img
+                    src="images/ivan-sutherland.png"
+                    alt="Portrait of Ivan Sutherland"
+                    width="280"
+                  />
+                </figure>
+                <h2 class="the-giants-name">Ivan Sutherland</h2>
+                <ul class="the-giants-links">
+                  <li><a href="#">Wikipedia</a></li>
+                  <li><a href="#">Sketchpad thesis (PDF)</a></li>
+                  <li><a href="#">Sketchpad Demo</a></li>
+                </ul>
+              <div class="the-giants-bio">
+                <p><a href="#">Ivan Sutherland's</a> 1963 MIT <a href="#">doctoral thesis</a> ran to a hundred and sixty pages and described, in meticulous detail, a program called <a href="#">Sketchpad</a> — a system that let a user draw directly on a screen with a light pen, define geometric constraints between shapes, and manipulate the results in real time.</p>
+                <p>This was the first interactive graphical computer program in history, and it introduced, almost in passing, the concept of objects with properties, of master figures and instances, of constraints that a system solves rather than a user specifies.</p>              
+                <p>Alan Kay, who has thought about this longer than almost anyone, has called it one of the greatest programs ever written.</p>              
+                <p>Sutherland went on to win the Turing Award, to found the research group that became the engine of computer graphics, and to contribute to work that now ships in every chip-design tool on the market.</p>
+              </div>
+            </section>
+            <section class="the-giants-profile the-giants-profile--alexander">
+                <figure class="the-giants-portrait">
+                  <img
+                    src="images/christopher-alexander.png"
+                    alt="Portrait of Christopher Alexander"
+                    width="280"
+                  />
+                </figure>
+                <h2 class="the-giants-name">Christopher Alexander</h2>
+                <ul class="the-giants-links">
+                  <li><a href="#">Wikipedia</a></li>
+                  <li><a href="#">A Pattern Language</a></li>
+                  <li><a href="#">The Timeless Way of Building</a></li>
+                </ul>
+              <div class="the-giants-bio">
+                <p>In the mid-1970s, the architect Christopher Alexander and his colleagues spent several years walking through cities and towns, asking a question that sounds almost embarrassingly soft: why do some places feel alive, and others don't?</p>
+                <p>The answer he arrived at, after enormous amounts of empirical observation, was structural.</p>
+                <p>Alive places, he found, are built from a recognisable set of recurring patterns — a window seat, a sheltered outdoor space, a pedestrian street at a certain scale — each of which resolves a genuine tension between competing human needs.</p>              
+                <p>He called this "the quality without a name," which is either evasive or precise depending on how you read it; he meant that the thing is real and verifiable even though our vocabulary hasn't caught up with it.</p>              
+                <p>His 1977 book <a href="#">A Pattern Language</a> catalogued 253 of these patterns, from the scale of regions down to the thickness of a wall.</p>
+                <p>Kent Beck and Ward Cunningham read it and recognised immediately that the same logic applied to code.</p>              
+                <p>By 1994, Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides had distilled that recognition into Design Patterns, the book that gave software engineering a shared vocabulary it has never relinquished.</p>              
+                <p>Alexander was reportedly ambivalent about this adoption.</p>
+                <p>He felt the patterns in that book were too mechanical, too concerned with structure and not enough with the experience of the person inside it.</p>
+              </div>
+            </section>
+            <section class="the-giants-profile the-giants-profile--kripke">
+                <figure class="the-giants-portrait">
+                  <img
+                    src="images/saul-kripke.png"
+                    alt="Portrait of Saul Kripke"
+                    width="280"
+                  />
+                </figure>
+                <h2 class="the-giants-name">Saul Kripke</h2>
+                <ul class="the-giants-links">
+                  <li><a href="#">Wikipedia</a></li>
+                  <li><a href="#">Naming and Necessity</a></li>
+                </ul>
+              <div class="the-giants-bio">
+                <p>In 1959, a paper appeared in the Journal of Symbolic Logic that resolved a problem logicians had been circling for decades: how to give modal logic — the formal study of necessity and possibility, of what must be true and what could have been otherwise — a rigorous mathematical semantics.</p>
+                <p>The author was Saul Kripke.</p>
+                <p>He was eighteen years old and still in high school.</p>  
+                <p>The framework he introduced, in which statements are evaluated across collections of "possible worlds" connected by accessibility relations, gave philosophers and logicians a precise and flexible tool for reasoning about counterfactuals, knowledge, obligation, and time.</p>
+                <p>Then, in 1970, he gave three lectures at Princeton — published a decade later as Naming and Necessity — that demolished a fifty-year philosophical consensus about how names work.</p>
+                <p>Names, he argued, are not disguised descriptions.</p>  
+                <p>"Water" doesn't mean "the clear liquid we drink"; it refers, rigidly, to whatever stuff actually has the molecular structure H₂O, in every possible world where that stuff exists.</p>
+                <p>The implications rippled through philosophy of language, metaphysics, and the theory of mind.</p>
+                <p>What we find most valuable in Kripke is not just the conclusions but the method: he took a set of intuitions that everyone shared but nobody had quite organised, found the hidden structure underneath them, and left the whole landscape cleaner and more honest than he found it.</p>
+              </div>
+            </section>
+            <section class="the-giants-profile the-giants-profile--altshuller">
+                <figure class="the-giants-portrait">
+                  <img
+                    src="images/genrikh-altshuller.png"
+                    alt="Portrait of Genrikh Altshuller"
+                    width="280" 
+                  />
+                </figure>
+                <h2 class="the-giants-name">Genrikh Altshuller</h2>
+                <ul class="the-giants-links">
+                  <li><a href="#">Wikipedia</a></li>
+                  <li><a href="#">The Innovation Algorithm</a></li>
+                </ul>
+              <div class="the-giants-bio">
+                <p>In 1950, Genrikh Altshuller, a young Soviet engineer and inventor, wrote a letter to Joseph Stalin explaining that the Soviet Union's approach to innovation was systematically wrong and needed to change.</p>
 
-          <article class="the-giants-profile">
-            <figure class="the-giants-portrait">
-              <img
-                src="images/the-giants/grace-hopper.png"
-                alt="Portrait of Grace Hopper"
-                align="left"
-                width="280"
-                height="360"
-              />
-            </figure>
-            <h2 class="the-giants-name">GRACE HOPPER</h2>
-            <p class="the-giants-tags">
-              <a href="#">Computing</a>, <a href="#">Programming languages</a>
-            </p>
-            <div class="the-giants-bio">
-              <p>
-                <a href="#">Grace Hopper</a> helped program the Harvard Mark I,
-                popularised the idea of machine-independent languages, and drove
-                the first compiler, A-0 — a step toward writing software in
-                something closer to human language. <a href="#">COBOL</a>, still
-                discussed in enterprise computing, carries her advocacy for
-                readable, business-oriented code.
-              </p>
-              <p>
-                A U.S. Navy rear admiral and relentless teacher, she insisted
-                that we waste enormous human time making computers easier for
-                people, not the other way around. She died in 1992.
-              </p>
-            </div>
-          </article>
+                <p>He was arrested shortly afterwards and spent several years in a labour camp in Siberia, where he continued to think about the problem.</p>
 
-          <article class="the-giants-profile">
-            <figure class="the-giants-portrait">
-              <img
-                src="images/the-giants/donald-knuth.png"
-                alt="Portrait of Donald Knuth"
-                align="right"
-                width="280"
-                height="360"
-              />
-            </figure>
-            <h2 class="the-giants-name">DONALD KNUTH</h2>
-            <p class="the-giants-tags">
-              <a href="#">Computer science</a>, <a href="#">Mathematics</a>
-            </p>
-            <div class="the-giants-bio">
-              <p>
-                <a href="#">Donald Knuth</a> set out to write the definitive
-                account of algorithms and instead created
-                <cite>The Art of Computer Programming</cite> — a living
-                monument that trained generations to care about correctness,
-                analysis, and elegance. His work on <a href="#">TeX</a>
-                reshaped how mathematicians and scientists publish.
-              </p>
-              <p>
-                Knuth’s insistence on rigour and literate programs is a standing
-                argument against treating software as disposable glue. He
-                remains a reference point for anyone who believes computing is a
-                proper intellectual discipline.
-              </p>
-            </div>
-          </article>
+                <p>What Altshuller had been working on, before and after the gulag, was a study of hundreds of thousands of patents from across industries and decades, looking for the underlying logic of genuine invention.</p>
 
-          <article class="the-giants-profile">
-            <figure class="the-giants-portrait">
-              <img
-                src="images/the-giants/john-mccarthy.png"
-                alt="Portrait of John McCarthy"
-                align="left"
-                width="280"
-                height="360"
-              />
-            </figure>
-            <h2 class="the-giants-name">JOHN MCCARTHY</h2>
-            <p class="the-giants-tags">
-              <a href="#">Artificial intelligence</a>,
-              <a href="#">Computer science</a>
-            </p>
-            <div class="the-giants-bio">
-              <p>
-                <a href="#">John McCarthy</a> coined the term
-                <a href="#">artificial intelligence</a> for the 1956 Dartmouth
-                workshop and invented <a href="#">Lisp</a>, a language whose
-                symbolic structure shaped AI research for decades. His
-                contributions include time-sharing systems and ideas about
-                commonsense knowledge that later projects still chase.
-              </p>
-              <p>
-                He died in 2011, having watched AI winter and spring repeat,
-                always arguing that intelligence is a problem in engineering
-                and logic, not mysticism.
-              </p>
-            </div>
-          </article>
+                <p>The system he extracted is called <a href="#">TRIZ</a> — the Theory of Inventive Problem Solving — and its central claim is this: the most creative solutions are not compromises between competing requirements, but dissolutions of them.</p>
 
-          <article class="the-giants-profile">
-            <figure class="the-giants-portrait">
-              <img
-                src="images/the-giants/marvin-minsky.png"
-                alt="Portrait of Marvin Minsky"
-                align="left"
-                width="280"
-                height="360"
-              />
-            </figure>
-            <h2 class="the-giants-name">MARVIN MINSKY</h2>
-            <p class="the-giants-tags">
-              <a href="#">Artificial intelligence</a>,
-              <a href="#">Cognitive science</a>
-            </p>
-            <div class="the-giants-bio">
-              <p>
-                <a href="#">Marvin Minsky</a> co-founded the MIT AI Laboratory
-                and built some of the first neural-network machines. His book
-                <cite>The Society of Mind</cite> proposed that intelligence
-                emerges from many simple agents — an idea that echoes in modern
-                modular systems and multi-agent design.
-              </p>
-              <p>
-                Provocative and encyclopaedic, he pushed researchers to ask how
-                perception, memory, and reasoning might actually be implemented.
-                He died in 2016, leaving a long shadow over both symbolic AI
-                and its critics.
-              </p>
-            </div>
-          </article>
+                <p>Where an ordinary engineer sees a trade-off — the structure must be strong but also light, the process must be fast but also accurate — an inventive engineer recognises a contradiction, and a contradiction is not a dead end but a destination.</p>
 
-          <article class="the-giants-profile">
-            <figure class="the-giants-portrait">
-              <img
-                src="images/the-giants/geoffrey-hinton.png"
-                alt="Portrait of Geoffrey Hinton"
-                align="left"
-                width="280"
-                height="360"
-              />
-            </figure>
-            <h2 class="the-giants-name">GEOFFREY HINTON</h2>
-            <p class="the-giants-tags">
-              <a href="#">Artificial intelligence</a>,
-              <a href="#">Machine learning</a>
-            </p>
-            <div class="the-giants-bio">
-              <p>
-                <a href="#">Geoffrey Hinton</a> kept working on
-                <a href="#">neural networks</a> when most of the field had
-                abandoned them, refining backpropagation and architectures that
-                would eventually dominate <a href="#">deep learning</a>. His
-                students and collaborators carried those methods into speech,
-                vision, and language at industrial scale.
-              </p>
-              <p>
-                He shared the 2024 Nobel Prize in Physics for foundational work
-                on artificial neural networks — a recognition that the ideas
-                once dismissed as fringe now underpin much of modern AI.
-              </p>
-            </div>
-          </article>
+                <p>The best creative problem is one that contains an internal conflict, because resolving it without compromise is what invention actually is.</p>
 
-          <article class="the-giants-profile">
-            <figure class="the-giants-portrait">
-              <img
-                src="images/the-giants/yann-lecun.png"
-                alt="Portrait of Yann LeCun"
-                align="right"
-                width="280"
-                height="360"
-              />
-            </figure>
-            <h2 class="the-giants-name">YANN LECUN</h2>
-            <p class="the-giants-tags">
-              <a href="#">Artificial intelligence</a>,
-              <a href="#">Machine learning</a>
-            </p>
-            <div class="the-giants-bio">
-              <p>
-                <a href="#">Yann LeCun</a> developed
-                <a href="#">convolutional neural networks</a> that made
-                practical computer vision possible — the same family of models
-                behind face recognition, medical imaging, and autonomous
-                perception. As a leader at Bell Labs, NYU, and Meta, he bridged
-                academic rigour and large-scale deployment.
-              </p>
-              <p>
-                He argues forcefully for
-                <a href="#">self-supervised learning</a> and architectures that
-                reason about the world, not just predict the next token. He
-                shared the 2018 Turing Award with Hinton and Bengio.
-              </p>
-            </div>
-          </article>
+                <p>Altshuller spent the rest of his life systematising this insight into a teachable methodology.</p>
+              </div>
+            </section>
+            <section class="the-giants-profile the-giants-profile--gang-of-four">
+                <figure class="the-giants-portrait">
+                  <img
+                    src="images/the-gang-of-four.png"
+                    alt="Portrait of The Gang of Four"
+                    width="280" 
+                  />
+                </figure>
+                <h2 class="the-giants-name">Gamma, Helm, Johnson & Vlissides — the Gang of Four</h2>
+                <ul class="the-giants-links">
+                  <li><a href="#">Wikipedia</a></li>
+                  <li><a href="#">Design Patterns</a></li>
+                </ul>
+              <div class="the-giants-bio">
+                <p>In 1993, a group of software engineers met in a mountain cabin in Colorado, at the invitation of Kent Beck and Grady Booch, to work on a problem that had been nagging at the field: good programmers kept solving the same problems in the same ways, and there was no shared language for what they were doing.</p>
 
-          <article class="the-giants-profile">
-            <figure class="the-giants-portrait">
-              <img
-                src="images/the-giants/yoshua-bengio.png"
-                alt="Portrait of Yoshua Bengio"
-                align="left"
-                width="280"
-                height="360"
-              />
-            </figure>
-            <h2 class="the-giants-name">YOSHUA BENGIO</h2>
-            <p class="the-giants-tags">
-              <a href="#">Artificial intelligence</a>,
-              <a href="#">Machine learning</a>
-            </p>
-            <div class="the-giants-bio">
-              <p>
-                <a href="#">Yoshua Bengio</a> helped establish
-                <a href="#">deep learning</a> as a field through work on
-                representation learning, attention, and generative models long
-                before they were fashionable. At Mila in Montreal, he built one
-                of the world’s largest academic collaborations on AI.
-              </p>
-              <p>
-                In recent years he has focused on the societal risks of powerful
-                systems, advocating for safety research and governance without
-                pretending the technical questions are separate from the
-                political ones. He shared the 2018 Turing Award with Hinton and
-                LeCun.
-              </p>
-            </div>
-          </article>
+                <p>The following year, Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides published <a href="#">Design Patterns: Elements of Reusable Object-Oriented Software</a>, which named twenty-three of these recurring solutions — Factory, Observer, Decorator, Strategy, Visitor and the rest — and described, for each, the problem it addresses, the structure it takes, and the trade-offs it involves.</p>
+
+                <p>The book was directly inspired by Christopher Alexander's A Pattern Language, and it did for software what Alexander had done for architecture: it made visible a set of structures that experienced practitioners already used intuitively but had never collectively named.</p>
+
+                <p>The names turned out to be the point.</p>
+
+                <p>Once you could say "that's an Observer pattern," you could discuss it, critique it, teach it, and choose deliberately not to use it.</p>
+              </div>
+            </section>
+            <section class="the-giants-profile the-giants-profile--huizinga">
+              <div class="the-giants-profile-content"></div>
+              <figure class="the-giants-portrait">
+                <img
+                  src="images/johan-huizinga.png"
+                  alt="Portrait of Johan Huizinga"
+                  width="280" 
+                />
+              </figure>
+              <h2 class="the-giants-name">Johan Huizinga</h2>
+              <ul class="the-giants-links">
+                <li><a href="#">Wikipedia</a></li>
+                <li><a href="#">Homo Ludens</a></li>
+              </ul>
+              <div class="the-giants-bio">
+                <p>In 1938, with Europe moving rapidly toward war, the Dutch cultural historian Johan Huizinga published <a href="#">Homo Ludens</a> — "Man the Player" — a book arguing that play is not a secondary feature of human life but one of its generative roots.</p>
+
+                <p>Law, ritual, poetry, philosophy, even warfare, he contended, carry within them the structural characteristics of play: they are bounded in time and space, governed by rules that participants accept freely, separate from ordinary life, and accompanied by a particular quality of absorption and tension that he found impossible to reduce to anything simpler.</p>
+
+                <p>His definition has held up remarkably well: play is a free activity, proceeding within its own limits of time and space, according to fixed rules, and absorbing the player entirely.</p>
+
+                <p>What makes it useful — genuinely useful, not just elegant — is that it captures both the seriousness of play and its separateness.</p>
+
+                <p>Play is not trivial; it is simply not for real, which is precisely what makes it a space in which real things can happen.</p>
+
+                <p>Every designer who has tried to think carefully about what a game actually is has ended up, sooner or later, at Huizinga.</p>
+              </div>
+            </section>
+            <section class="the-giants-profile the-giants-profile--vygotsky">
+              <figure class="the-giants-portrait">
+                <img
+                  src="images/lev-vygotsky.png"
+                  alt="Portrait of Lev Vygotsky"
+                  width="280"
+                />
+              </figure>
+              <h2 class="the-giants-name">Lev Vygotsky</h2>
+              <ul class="the-giants-links the-giants-links--no-markers">
+                <li><a href="#">Wikipedia</a></li>
+                <li><a href="#">Mind in Society</a></li>
+                <li><a href="#">Thought and Language</a></li>
+              </ul>
+              <div class="the-giants-bio">
+                <p>Lev Vygotsky died of tuberculosis in 1934, aged thirty-seven, having spent most of his working life in conditions of material scarcity and institutional hostility, and having produced, in roughly a decade of serious work, a body of ideas that developmental psychology spent the rest of the twentieth century unpacking.</p>
+
+                <p>His most enduring contribution is the concept of the Zone of Proximal Development: the gap between what a learner can do alone and what they can do with skilled guidance.</p>
+
+                <p>The zone is not a deficit to be closed; it is where learning actually happens, the productive edge between mastery and the not-yet-possible.</p>
+
+                <p>Design anything for learning — a curriculum, a game, a tool, a conversation — and Vygotsky's question is the right one to ask: are you working in the zone, or are you either boring the learner with what they already know, or losing them in what they cannot yet reach?</p>
+
+                <p>He also argued, with force and evidence, that thought is not prior to language but shaped by it, that cognition is always social before it is individual, and that the tools a culture provides — including its words — are not neutral containers but active shapers of what can be thought.</p>
+
+                <p>The reason his work stays with you is that it treats the learner, at any age, as someone in the middle of something — not lacking, but reaching.</p>
+              </div>
+            </section>
         </div>
-      </div>
-    </main>
-    <include src="partials/footer.html"></include>
+      </main>
+      <include src="partials/footer.html"></include>
+    </div>
     <script src="js/site-header-menu.js" defer></script>
+    <script src="js/dot-matrix-printer.js" defer></script>
   </body>
 </html>

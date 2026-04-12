@@ -1,9 +1,9 @@
 (function () {
-  var DESKTOP_MQ = '(min-width: 64rem)';
-  var figure = document.querySelector('.main-hero-illustration');
+  var DESKTOP_MQ = "(min-width: 64rem)";
+  var figure = document.querySelector(".main-hero-illustration");
   if (!figure) return;
 
-  var img = figure.querySelector('img');
+  var img = figure.querySelector("img");
   var canvas = null;
   var ctx = null;
   var animId = null;
@@ -12,7 +12,7 @@
   var boundMouseUp = null;
 
   function onMediaChange(e) {
-    var isDesktop = (e.matches !== undefined) ? e.matches : e;
+    var isDesktop = e.matches !== undefined ? e.matches : e;
     if (isDesktop) {
       boot();
     } else {
@@ -23,11 +23,11 @@
   function boot() {
     if (canvas) return; // already running
 
-    canvas = document.createElement('canvas');
-    canvas.id = 'globe';
-    ctx = canvas.getContext('2d');
+    canvas = document.createElement("canvas");
+    canvas.id = "globe";
+    ctx = canvas.getContext("2d");
 
-    if (img) img.style.display = 'none';
+    if (img) img.style.display = "none";
     figure.appendChild(canvas);
 
     initState();
@@ -48,7 +48,7 @@
     canvas = null;
     ctx = null;
 
-    if (img) img.style.display = '';
+    if (img) img.style.display = "";
   }
 
   // ============================================
@@ -75,10 +75,10 @@
 
     canvas.width = Math.max(1, Math.round(W * DPR));
     canvas.height = Math.max(1, Math.round(H * DPR));
-    canvas.style.width = W + 'px';
-    canvas.style.height = H + 'px';
-    figure.style.setProperty('--canvas-pad-x', padX + 'px');
-    figure.style.setProperty('--canvas-pad-y', padY + 'px');
+    canvas.style.width = W + "px";
+    canvas.style.height = H + "px";
+    figure.style.setProperty("--canvas-pad-x", padX + "px");
+    figure.style.setProperty("--canvas-pad-y", padY + "px");
 
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
     CX = W / 2;
@@ -101,17 +101,25 @@
   }
 
   function smoothNoise(x, y) {
-    var ix = Math.floor(x), iy = Math.floor(y);
-    var fx = x - ix, fy = y - iy;
+    var ix = Math.floor(x),
+      iy = Math.floor(y);
+    var fx = x - ix,
+      fy = y - iy;
     var sx = fx * fx * (3 - 2 * fx);
     var sy = fy * fy * (3 - 2 * fy);
-    var n00 = hash(ix, iy), n10 = hash(ix + 1, iy);
-    var n01 = hash(ix, iy + 1), n11 = hash(ix + 1, iy + 1);
-    return (n00 * (1 - sx) + n10 * sx) * (1 - sy) + (n01 * (1 - sx) + n11 * sx) * sy;
+    var n00 = hash(ix, iy),
+      n10 = hash(ix + 1, iy);
+    var n01 = hash(ix, iy + 1),
+      n11 = hash(ix + 1, iy + 1);
+    return (
+      (n00 * (1 - sx) + n10 * sx) * (1 - sy) + (n01 * (1 - sx) + n11 * sx) * sy
+    );
   }
 
   function fbm(x, y) {
-    var val = 0, amp = 0.5, freq = 1;
+    var val = 0,
+      amp = 0.5,
+      freq = 1;
     for (var i = 0; i < 6; i++) {
       val += amp * smoothNoise(x * freq, y * freq);
       amp *= 0.5;
@@ -160,7 +168,13 @@
   // ============================================
   var satelliteData = [
     { inclination: 0.4, phase: 0, speed: 0.0012, orbitOffset: 55, size: 3 },
-    { inclination: -0.7, phase: 2.1, speed: 0.0008, orbitOffset: 85, size: 2.5 },
+    {
+      inclination: -0.7,
+      phase: 2.1,
+      speed: 0.0008,
+      orbitOffset: 85,
+      size: 2.5,
+    },
     { inclination: 1.2, phase: 4.2, speed: 0.0015, orbitOffset: 40, size: 2 },
     { inclination: 0.1, phase: 1.0, speed: 0.001, orbitOffset: 110, size: 2 },
   ];
@@ -182,32 +196,85 @@
   // DATA ANNOTATIONS
   // ============================================
   var dataBlockData = [
-    { angle: -2.3, elevation: 0.3, distOffset: 95, rows: [
-      { label: '\u03B2', value: '0.02' }, { label: 'convergence', value: 'true' },
-    ]},
-    { angle: -0.5, elevation: -0.2, distOffset: 80, rows: [
-      { label: 'node', value: 'n:3b2313' }, { label: 'weight', value: '0.847' }, { label: 'bias', value: '-0.031' },
-    ]},
-    { angle: 3.5, elevation: 0.1, distOffset: 65, rows: [
-      { label: 'P(Z|X)', value: '0.9214' }, { label: 'H(Z)', value: '2.307' },
-    ]},
-    { angle: 2.2, elevation: -0.5, distOffset: 100, rows: [
-      { label: 'cluster', value: 'b:3h5' }, { label: '\u03C3\u00B2', value: '1.4e\u207B\u00B3' },
-      { label: 'members', value: '2,841' }, { label: 'drift', value: '+0.007/s' },
-    ]},
-    { angle: -1.4, elevation: 0.6, distOffset: 110, rows: [
-      { label: '\u03BB', value: '0.073' }, { label: 'epoch', value: '14,209' }, { label: 'loss', value: '0.0041' },
-    ]},
-    { angle: 0.8, elevation: 0.4, distOffset: 75, rows: [
-      { label: '\u2202\u03A9', value: 'bounded' }, { label: 'dim', value: '128' },
-    ]},
-    { angle: 1.5, elevation: -0.7, distOffset: 90, rows: [
-      { label: 'emitter', value: 'e:09f2' }, { label: 'rate', value: '120/h' },
-      { label: 'decay', value: '0.93' }, { label: 'active', value: 'true' },
-    ]},
-    { angle: -3.0, elevation: -0.3, distOffset: 70, rows: [
-      { label: '\u03B8', value: '0.731' }, { label: '\u03C6', value: '4.19' }, { label: 'r\u0302\u00B7n\u0302', value: '>0' },
-    ]},
+    {
+      angle: -2.3,
+      elevation: 0.3,
+      distOffset: 95,
+      rows: [
+        { label: "\u03B2", value: "0.02" },
+        { label: "convergence", value: "true" },
+      ],
+    },
+    {
+      angle: -0.5,
+      elevation: -0.2,
+      distOffset: 80,
+      rows: [
+        { label: "node", value: "n:3b2313" },
+        { label: "weight", value: "0.847" },
+        { label: "bias", value: "-0.031" },
+      ],
+    },
+    {
+      angle: 3.5,
+      elevation: 0.1,
+      distOffset: 65,
+      rows: [
+        { label: "P(Z|X)", value: "0.9214" },
+        { label: "H(Z)", value: "2.307" },
+      ],
+    },
+    {
+      angle: 2.2,
+      elevation: -0.5,
+      distOffset: 100,
+      rows: [
+        { label: "cluster", value: "b:3h5" },
+        { label: "\u03C3\u00B2", value: "1.4e\u207B\u00B3" },
+        { label: "members", value: "2,841" },
+        { label: "drift", value: "+0.007/s" },
+      ],
+    },
+    {
+      angle: -1.4,
+      elevation: 0.6,
+      distOffset: 110,
+      rows: [
+        { label: "\u03BB", value: "0.073" },
+        { label: "epoch", value: "14,209" },
+        { label: "loss", value: "0.0041" },
+      ],
+    },
+    {
+      angle: 0.8,
+      elevation: 0.4,
+      distOffset: 75,
+      rows: [
+        { label: "\u2202\u03A9", value: "bounded" },
+        { label: "dim", value: "128" },
+      ],
+    },
+    {
+      angle: 1.5,
+      elevation: -0.7,
+      distOffset: 90,
+      rows: [
+        { label: "emitter", value: "e:09f2" },
+        { label: "rate", value: "120/h" },
+        { label: "decay", value: "0.93" },
+        { label: "active", value: "true" },
+      ],
+    },
+    {
+      angle: -3.0,
+      elevation: -0.3,
+      distOffset: 70,
+      rows: [
+        { label: "\u03B8", value: "0.731" },
+        { label: "\u03C6", value: "4.19" },
+        { label: "r\u0302\u00B7n\u0302", value: ">0" },
+      ],
+    },
   ];
 
   function rebuildDataBlocks() {
@@ -216,7 +283,9 @@
         angle: b.angle,
         elevation: b.elevation,
         dist: RADIUS + b.distOffset,
-        rows: b.rows.map(function (r) { return { label: r.label, value: r.value, calculating: false }; }),
+        rows: b.rows.map(function (r) {
+          return { label: r.label, value: r.value, calculating: false };
+        }),
       };
     });
     connectionTargets = dataBlocks.map(function (b) {
@@ -230,31 +299,69 @@
 
   // Random value generators
   var fakeGenerators = {
-    float: function () { return (Math.random() * 2 - 0.5).toFixed(4); },
-    smallFloat: function () { return (Math.random() * 0.1).toFixed(4); },
-    sciNotation: function () { return (Math.random() * 9 + 0.1).toFixed(1) + 'e\u207B' + (Math.floor(Math.random() * 5) + 1); },
-    int: function () { return Math.floor(Math.random() * 50000).toLocaleString(); },
-    rate: function () { return Math.floor(Math.random() * 500) + '/h'; },
-    nodeId: function () { return ['n:', 'e:', 'b:', 'c:'][Math.floor(Math.random() * 4)] + Math.random().toString(16).substr(2, 4); },
-    bool: function () { return Math.random() > 0.5 ? 'true' : 'false'; },
-    dim: function () { return String(Math.pow(2, Math.floor(Math.random() * 4) + 5)); },
-    bounded: function () { return ['bounded', 'unbounded', 'periodic', 'compact'][Math.floor(Math.random() * 4)]; },
-    drift: function () { return (Math.random() > 0.5 ? '+' : '-') + (Math.random() * 0.05).toFixed(3) + '/s'; },
+    float: function () {
+      return (Math.random() * 2 - 0.5).toFixed(4);
+    },
+    smallFloat: function () {
+      return (Math.random() * 0.1).toFixed(4);
+    },
+    sciNotation: function () {
+      return (
+        (Math.random() * 9 + 0.1).toFixed(1) +
+        "e\u207B" +
+        (Math.floor(Math.random() * 5) + 1)
+      );
+    },
+    int: function () {
+      return Math.floor(Math.random() * 50000).toLocaleString();
+    },
+    rate: function () {
+      return Math.floor(Math.random() * 500) + "/h";
+    },
+    nodeId: function () {
+      return (
+        ["n:", "e:", "b:", "c:"][Math.floor(Math.random() * 4)] +
+        Math.random().toString(16).substr(2, 4)
+      );
+    },
+    bool: function () {
+      return Math.random() > 0.5 ? "true" : "false";
+    },
+    dim: function () {
+      return String(Math.pow(2, Math.floor(Math.random() * 4) + 5));
+    },
+    bounded: function () {
+      return ["bounded", "unbounded", "periodic", "compact"][
+        Math.floor(Math.random() * 4)
+      ];
+    },
+    drift: function () {
+      return (
+        (Math.random() > 0.5 ? "+" : "-") +
+        (Math.random() * 0.05).toFixed(3) +
+        "/s"
+      );
+    },
   };
 
-  var calcChars = '0123456789.+-eabcdef:,/';
+  var calcChars = "0123456789.+-eabcdef:,/";
 
   function getGeneratorForLabel(label) {
-    if (['\u03B2', '\u03BB', '\u03B8', '\u03C6', 'decay'].indexOf(label) !== -1) return fakeGenerators.float;
-    if (['\u03C3\u00B2', 'loss'].indexOf(label) !== -1) return fakeGenerators.sciNotation;
-    if (['weight', 'bias'].indexOf(label) !== -1) return fakeGenerators.smallFloat;
-    if (['members', 'epoch'].indexOf(label) !== -1) return fakeGenerators.int;
-    if (label === 'rate') return fakeGenerators.rate;
-    if (['node', 'cluster', 'emitter'].indexOf(label) !== -1) return fakeGenerators.nodeId;
-    if (['convergence', 'active'].indexOf(label) !== -1) return fakeGenerators.bool;
-    if (label === 'dim') return fakeGenerators.dim;
-    if (label === '\u2202\u03A9') return fakeGenerators.bounded;
-    if (label === 'drift') return fakeGenerators.drift;
+    if (["\u03B2", "\u03BB", "\u03B8", "\u03C6", "decay"].indexOf(label) !== -1)
+      return fakeGenerators.float;
+    if (["\u03C3\u00B2", "loss"].indexOf(label) !== -1)
+      return fakeGenerators.sciNotation;
+    if (["weight", "bias"].indexOf(label) !== -1)
+      return fakeGenerators.smallFloat;
+    if (["members", "epoch"].indexOf(label) !== -1) return fakeGenerators.int;
+    if (label === "rate") return fakeGenerators.rate;
+    if (["node", "cluster", "emitter"].indexOf(label) !== -1)
+      return fakeGenerators.nodeId;
+    if (["convergence", "active"].indexOf(label) !== -1)
+      return fakeGenerators.bool;
+    if (label === "dim") return fakeGenerators.dim;
+    if (label === "\u2202\u03A9") return fakeGenerators.bounded;
+    if (label === "drift") return fakeGenerators.drift;
     return fakeGenerators.float;
   }
 
@@ -276,12 +383,13 @@
 
             if (progress < 1) {
               var len = finalValue.length;
-              var scrambled = '';
+              var scrambled = "";
               for (var c = 0; c < len; c++) {
                 if (c < Math.floor(progress * len * 1.5)) {
                   scrambled += finalValue[c];
                 } else {
-                  scrambled += calcChars[Math.floor(Math.random() * calcChars.length)];
+                  scrambled +=
+                    calcChars[Math.floor(Math.random() * calcChars.length)];
                 }
               }
               row.value = scrambled;
@@ -320,22 +428,25 @@
     rotX += dy * 0.005;
     rotX = Math.max(-1.2, Math.min(1.2, rotX));
 
-    velY = dx * 0.005 / (dt / 16);
-    velX = dy * 0.005 / (dt / 16);
+    velY = (dx * 0.005) / (dt / 16);
+    velX = (dy * 0.005) / (dt / 16);
 
     lastMouseX = e.clientX;
     lastMouseY = e.clientY;
     lastDragTime = now;
   }
 
-  function onMouseUp() { isDragging = false; }
+  function onMouseUp() {
+    isDragging = false;
+  }
 
   function onTouchStart(e) {
     e.preventDefault();
     isDragging = true;
     lastMouseX = e.touches[0].clientX;
     lastMouseY = e.touches[0].clientY;
-    velY = 0; velX = 0;
+    velY = 0;
+    velX = 0;
     lastDragTime = Date.now();
   }
 
@@ -351,35 +462,37 @@
     rotX += dy * 0.005;
     rotX = Math.max(-1.2, Math.min(1.2, rotX));
 
-    velY = dx * 0.005 / (dt / 16);
-    velX = dy * 0.005 / (dt / 16);
+    velY = (dx * 0.005) / (dt / 16);
+    velX = (dy * 0.005) / (dt / 16);
 
     lastMouseX = e.touches[0].clientX;
     lastMouseY = e.touches[0].clientY;
     lastDragTime = now;
   }
 
-  function onTouchEnd() { isDragging = false; }
+  function onTouchEnd() {
+    isDragging = false;
+  }
 
   function bindEvents() {
     boundResize = resize;
     boundMouseMove = onMouseMove;
     boundMouseUp = onMouseUp;
 
-    window.addEventListener('resize', boundResize);
-    window.addEventListener('mousemove', boundMouseMove);
-    window.addEventListener('mouseup', boundMouseUp);
+    window.addEventListener("resize", boundResize);
+    window.addEventListener("mousemove", boundMouseMove);
+    window.addEventListener("mouseup", boundMouseUp);
 
-    canvas.addEventListener('mousedown', onMouseDown);
-    canvas.addEventListener('touchstart', onTouchStart, { passive: false });
-    canvas.addEventListener('touchmove', onTouchMove, { passive: false });
-    canvas.addEventListener('touchend', onTouchEnd);
+    canvas.addEventListener("mousedown", onMouseDown);
+    canvas.addEventListener("touchstart", onTouchStart, { passive: false });
+    canvas.addEventListener("touchmove", onTouchMove, { passive: false });
+    canvas.addEventListener("touchend", onTouchEnd);
   }
 
   function unbindEvents() {
-    window.removeEventListener('resize', boundResize);
-    window.removeEventListener('mousemove', boundMouseMove);
-    window.removeEventListener('mouseup', boundMouseUp);
+    window.removeEventListener("resize", boundResize);
+    window.removeEventListener("mousemove", boundMouseMove);
+    window.removeEventListener("mouseup", boundMouseUp);
   }
 
   // ============================================
@@ -399,8 +512,10 @@
         var ny = sy / RADIUS;
         var nz = Math.sqrt(Math.max(0, 1 - nx * nx - ny * ny));
 
-        var cosRY = Math.cos(rotY), sinRY = Math.sin(rotY);
-        var cosRX = Math.cos(rotX), sinRX = Math.sin(rotX);
+        var cosRY = Math.cos(rotY),
+          sinRY = Math.sin(rotY);
+        var cosRX = Math.cos(rotX),
+          sinRX = Math.sin(rotX);
 
         var ry = ny * cosRX - nz * sinRX;
         var rz = ny * sinRX + nz * cosRX;
@@ -413,15 +528,20 @@
         var tlat = Math.asin(Math.max(-1, Math.min(1, fy)));
         var tlon = Math.atan2(fx, fz);
 
-        var texX = Math.floor(((tlon + Math.PI) / (Math.PI * 2)) * TEX_W) % TEX_W;
+        var texX =
+          Math.floor(((tlon + Math.PI) / (Math.PI * 2)) * TEX_W) % TEX_W;
         var texY = Math.floor(((tlat + Math.PI / 2) / Math.PI) * TEX_H);
         texX = Math.max(0, Math.min(TEX_W - 1, texX));
         texY = Math.max(0, Math.min(TEX_H - 1, texY));
 
         var isLand = landMap[texY * TEX_W + texX];
 
-        var lightX = -0.3, lightY = -0.4, lightZ = 0.85;
-        var lightLen = Math.sqrt(lightX * lightX + lightY * lightY + lightZ * lightZ);
+        var lightX = -0.3,
+          lightY = -0.4,
+          lightZ = 0.85;
+        var lightLen = Math.sqrt(
+          lightX * lightX + lightY * lightY + lightZ * lightZ,
+        );
         var light = (nx * lightX + ny * lightY + nz * lightZ) / lightLen;
         var shade = Math.max(0, Math.min(1, light));
 
@@ -440,15 +560,18 @@
 
         if (nz < 0.15) {
           darkness = 0.9;
-          opacity = 0.75 * (0.15 - nz) / 0.15;
+          opacity = (0.75 * (0.15 - nz)) / 0.15;
         }
 
         if (opacity < 0.04) continue;
 
-        var sizeIndex = Math.min(dotSizes.length - 1, Math.floor(darkness * dotSizes.length));
+        var sizeIndex = Math.min(
+          dotSizes.length - 1,
+          Math.floor(darkness * dotSizes.length),
+        );
         var dotR = dotSizes[sizeIndex];
 
-        ctx.fillStyle = 'rgba(0,0,0,' + opacity + ')';
+        ctx.fillStyle = "rgba(0,0,0," + opacity + ")";
         ctx.beginPath();
         ctx.arc(CX + sx, CY + sy, dotR, 0, Math.PI * 2);
         ctx.fill();
@@ -457,15 +580,17 @@
   }
 
   function drawOrbits(time) {
-    var cosRY = Math.cos(rotY), sinRY = Math.sin(rotY);
-    var cosRX = Math.cos(rotX), sinRX = Math.sin(rotX);
+    var cosRY = Math.cos(rotY),
+      sinRY = Math.sin(rotY);
+    var cosRX = Math.cos(rotX),
+      sinRX = Math.sin(rotX);
 
     satellites.forEach(function (sat) {
       var angle = sat.phase + time * sat.speed;
       var inc = sat.inclination;
       var r = sat.orbitRadius;
 
-      ctx.strokeStyle = 'rgba(100,95,88,0.12)';
+      ctx.strokeStyle = "rgba(100,95,88,0.12)";
       ctx.lineWidth = 0.7;
       ctx.beginPath();
 
@@ -484,8 +609,10 @@
         var screenX = CX + rx;
         var screenY = CY + fy;
 
-        if (firstPoint) { ctx.moveTo(screenX, screenY); firstPoint = false; }
-        else ctx.lineTo(screenX, screenY);
+        if (firstPoint) {
+          ctx.moveTo(screenX, screenY);
+          firstPoint = false;
+        } else ctx.lineTo(screenX, screenY);
       }
       ctx.stroke();
 
@@ -511,7 +638,7 @@
         for (var i = 1; i < sat.trail.length; i++) {
           var t = i / sat.trail.length;
           var behindAlpha = sat.trail[i].behind ? 0.08 : 0.3;
-          ctx.strokeStyle = 'rgba(60,55,48,' + (t * behindAlpha) + ')';
+          ctx.strokeStyle = "rgba(60,55,48," + t * behindAlpha + ")";
           ctx.lineWidth = t * 1.5;
           ctx.beginPath();
           ctx.moveTo(sat.trail[i - 1].x, sat.trail[i - 1].y);
@@ -521,13 +648,13 @@
       }
 
       var satAlpha = satBehind ? 0.15 : 0.8;
-      ctx.fillStyle = 'rgba(40,35,30,' + satAlpha + ')';
+      ctx.fillStyle = "rgba(40,35,30," + satAlpha + ")";
       ctx.beginPath();
       ctx.arc(satX, satY, sat.size, 0, Math.PI * 2);
       ctx.fill();
 
       if (!satBehind) {
-        ctx.fillStyle = 'rgba(40,35,30,0.08)';
+        ctx.fillStyle = "rgba(40,35,30,0.08)";
         ctx.beginPath();
         ctx.arc(satX, satY, sat.size * 4, 0, Math.PI * 2);
         ctx.fill();
@@ -536,8 +663,10 @@
   }
 
   function drawAnnotations(time) {
-    var cosRY = Math.cos(rotY), sinRY = Math.sin(rotY);
-    var cosRX = Math.cos(rotX), sinRX = Math.sin(rotX);
+    var cosRY = Math.cos(rotY),
+      sinRY = Math.sin(rotY);
+    var cosRX = Math.cos(rotX),
+      sinRX = Math.sin(rotX);
 
     if (isDragging) {
       blockOpacity = Math.max(0, blockOpacity - 0.06);
@@ -545,7 +674,9 @@
     } else {
       if (wasRecentlyDragging) {
         wasRecentlyDragging = false;
-        setTimeout(function () { triggerCalculations(); }, 300);
+        setTimeout(function () {
+          triggerCalculations();
+        }, 300);
       }
       blockOpacity = Math.min(1, blockOpacity + 0.03);
     }
@@ -584,9 +715,11 @@
       var ay = screenY + wobY;
 
       var ct = connectionTargets[bi];
-      var cpx = ct.surfaceDist * Math.cos(ct.surfaceAngle) * Math.cos(ct.surfaceElev);
+      var cpx =
+        ct.surfaceDist * Math.cos(ct.surfaceAngle) * Math.cos(ct.surfaceElev);
       var cpy = ct.surfaceDist * Math.sin(ct.surfaceElev);
-      var cpz = ct.surfaceDist * Math.sin(ct.surfaceAngle) * Math.cos(ct.surfaceElev);
+      var cpz =
+        ct.surfaceDist * Math.sin(ct.surfaceAngle) * Math.cos(ct.surfaceElev);
 
       var crx = cpx * cosRY - cpz * sinRY;
       var cry = cpy;
@@ -596,7 +729,7 @@
       var ttx = CX + crx;
       var tty = CY + cfy;
 
-      ctx.strokeStyle = 'rgba(120,115,105,' + (0.2 * alpha) + ')';
+      ctx.strokeStyle = "rgba(120,115,105," + 0.2 * alpha + ")";
       ctx.lineWidth = 0.5;
       ctx.setLineDash([2, 4]);
       ctx.beginPath();
@@ -605,7 +738,7 @@
       ctx.stroke();
       ctx.setLineDash([]);
 
-      ctx.fillStyle = 'rgba(50,45,40,' + (0.5 * alpha) + ')';
+      ctx.fillStyle = "rgba(50,45,40," + 0.5 * alpha + ")";
       ctx.beginPath();
       ctx.arc(ax, ay, 2, 0, Math.PI * 2);
       ctx.fill();
@@ -613,50 +746,61 @@
       var isRight = rx > 0;
       var labelStartX = isRight ? ax + 10 : ax - 10;
 
-      ctx.font = '9px IBM Plex Mono, monospace';
-      ctx.textBaseline = 'top';
+      ctx.font = "9px var(--base-font-mono)";
+      ctx.textBaseline = "top";
 
       block.rows.forEach(function (row, ri) {
         var rowY = ay - (block.rows.length * lineHeight) / 2 + ri * lineHeight;
 
-        var labelText = row.label + ': ';
+        var labelText = row.label + ": ";
         var valueText = row.value;
         var labelWidth = ctx.measureText(labelText).width;
 
         var textX = labelStartX;
 
-        ctx.fillStyle = 'rgba(130,125,115,' + (0.5 * alpha) + ')';
+        ctx.fillStyle = "rgba(130,125,115," + 0.5 * alpha + ")";
         if (isRight) {
-          ctx.textAlign = 'left';
+          ctx.textAlign = "left";
           ctx.fillText(labelText, textX, rowY);
         } else {
-          ctx.textAlign = 'right';
-          ctx.fillText(labelText, textX - ctx.measureText(valueText).width, rowY);
+          ctx.textAlign = "right";
+          ctx.fillText(
+            labelText,
+            textX - ctx.measureText(valueText).width,
+            rowY,
+          );
         }
 
         var valueAlpha = row.calculating
           ? 0.3 + Math.sin(Date.now() * 0.02 + ri) * 0.15
           : 0.7;
 
-        ctx.fillStyle = 'rgba(50,45,40,' + (valueAlpha * alpha) + ')';
+        ctx.fillStyle = "rgba(50,45,40," + valueAlpha * alpha + ")";
         if (isRight) {
-          ctx.textAlign = 'left';
+          ctx.textAlign = "left";
           ctx.fillText(valueText, textX + labelWidth, rowY);
         } else {
-          ctx.textAlign = 'right';
+          ctx.textAlign = "right";
           ctx.fillText(valueText, textX, rowY);
         }
       });
     });
 
-    ctx.textAlign = 'left';
+    ctx.textAlign = "left";
   }
 
   function drawAtmosphere() {
-    var gradient = ctx.createRadialGradient(CX, CY, RADIUS * 0.95, CX, CY, RADIUS * 1.15);
-    gradient.addColorStop(0, 'rgba(240,237,230,0)');
-    gradient.addColorStop(0.5, 'rgba(200,195,185,0.08)');
-    gradient.addColorStop(1, 'rgba(240,237,230,0)');
+    var gradient = ctx.createRadialGradient(
+      CX,
+      CY,
+      RADIUS * 0.95,
+      CX,
+      CY,
+      RADIUS * 1.15,
+    );
+    gradient.addColorStop(0, "rgba(240,237,230,0)");
+    gradient.addColorStop(0.5, "rgba(200,195,185,0.08)");
+    gradient.addColorStop(1, "rgba(240,237,230,0)");
 
     ctx.fillStyle = gradient;
     ctx.beginPath();
@@ -699,6 +843,6 @@
   // INIT — must run after all declarations
   // ============================================
   var mql = window.matchMedia(DESKTOP_MQ);
-  mql.addEventListener('change', onMediaChange);
+  mql.addEventListener("change", onMediaChange);
   onMediaChange(mql);
 })();

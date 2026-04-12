@@ -1,4 +1,14 @@
 .work-ethic {
+  background-image:
+    url("../images/w-e-bg-1.png"), url("../images/w-e-bg-1.png");
+  background-repeat: no-repeat, no-repeat;
+  background-size:
+    14.62194rem 17.35438rem,
+    14.62194rem 17.35438rem;
+  background-position:
+    calc(50% - 42rem) 15rem,
+    calc(50% + 42rem) 35rem;
+
   & .site-content-container {
     &::after {
       display: none;
@@ -32,7 +42,7 @@
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
 
   & p {
-    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-family: var(--base-font-mono);
     font-style: italic;
     font-size: 0.77238rem;
     line-height: normal;
@@ -64,7 +74,7 @@
 .work-ethic-heading {
   margin: 0 0 1rem;
 
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-family: var(--base-font-mono);
   font-size: 1rem;
   font-weight: 500;
   line-height: normal;
@@ -83,7 +93,7 @@
 }
 
 .work-ethic-handwritten {
-  font-family: "Aaic", sans-serif;
+  font-family: var(--font-aaic);
   font-style: italic;
   color: var(--text-accent);
 }
@@ -99,7 +109,7 @@
     }
 
     & p {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-family: var(--base-font-mono);
     }
 
     & .work-ethic-text-quote {
@@ -175,7 +185,7 @@
 
   & .work-ethic-text {
     & p {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-family: var(--base-font-mono);
       line-height: 1.3;
     }
   }
@@ -210,10 +220,39 @@
 
   background: var(--bg-quinary);
 
+  & .work-ethic-heading {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -7.9rem;
+      top: -5rem;
+      width: 11.6875rem;
+      height: 2.5625rem;
+      transform: rotate(-22.651deg);
+      background-color: var(--bg-nonary);
+      opacity: 0.3;
+    }
+  }
+
   & .work-ethic-handwritten {
     margin: 0 1rem;
     font-size: 1.3rem;
     transform: rotate(-2.525deg);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 6rem;
+    top: -1.5rem;
+    width: 15.67638rem;
+    height: 2.5625rem;
+    transform: rotate(-1.736deg);
+
+    background-color: var(--bg-nonary);
+    opacity: 0.3;
   }
 
   &::after {
@@ -416,7 +455,7 @@
 
   & .work-ethic-text {
     & p {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-family: var(--base-font-mono);
     }
   }
 }
