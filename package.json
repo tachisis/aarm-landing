@@ -3,14 +3,14 @@
   "private": true,
   "scripts": {
     "build": "npm run build:html && npm run build:css && npm run copy:assets && npm run copy:js",
-    "build:html": "posthtml src/index.html -o dist/index.html -c posthtml.config.cjs && posthtml src/work-and-ethic.html -o dist/work-and-ethic.html -c posthtml.config.cjs && posthtml src/the-giants.html -o dist/the-giants.html -c posthtml.config.cjs && posthtml src/non-jobs.html -o dist/non-jobs.html -c posthtml.config.cjs",
+    "build:html": "posthtml src/index.html -o dist/index.html -c posthtml.config.cjs && posthtml src/work-and-ethic.html -o dist/work-and-ethic.html -c posthtml.config.cjs && posthtml src/the-giants.html -o dist/the-giants.html -c posthtml.config.cjs && posthtml src/non-jobs.html -o dist/non-jobs.html -c posthtml.config.cjs && posthtml src/jobs.html -o dist/jobs.html -c posthtml.config.cjs",
     "build:css": "postcss src/css/main.pcss -o dist/css/main.css",
     "copy:assets": "node scripts/copy-assets.mjs",
     "copy:js": "node scripts/copy-js.mjs",
     "dev": "npm run copy:js && npm run build:html && concurrently -k -n html,css,assets,js,serve \"npm run dev:html\" \"npm run dev:css\" \"npm run dev:assets\" \"npm run dev:js\" \"npm run dev:serve\"",
     "dev:assets": "onchange -i \"assets/**/*\" -- node scripts/copy-assets.mjs",
     "dev:serve": "live-server dist --port=3000 --open=/",
-    "dev:html": "onchange -i \"src/**/*.html\" \"src/**/*.svg\" -- sh -c 'posthtml src/index.html -o dist/index.html -c posthtml.config.cjs && posthtml src/work-and-ethic.html -o dist/work-and-ethic.html -c posthtml.config.cjs && posthtml src/the-giants.html -o dist/the-giants.html -c posthtml.config.cjs && posthtml src/non-jobs.html -o dist/non-jobs.html -c posthtml.config.cjs'",
+    "dev:html": "onchange -i \"src/**/*.html\" \"src/**/*.svg\" -- sh -c 'posthtml src/index.html -o dist/index.html -c posthtml.config.cjs && posthtml src/work-and-ethic.html -o dist/work-and-ethic.html -c posthtml.config.cjs && posthtml src/the-giants.html -o dist/the-giants.html -c posthtml.config.cjs && posthtml src/non-jobs.html -o dist/non-jobs.html -c posthtml.config.cjs && posthtml src/jobs.html -o dist/jobs.html -c posthtml.config.cjs'",
     "dev:css": "postcss src/css/main.pcss -o dist/css/main.css -w",
     "dev:js": "onchange -i \"src/js/**/*.js\" -- node scripts/copy-js.mjs"
   },

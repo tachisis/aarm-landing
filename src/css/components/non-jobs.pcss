@@ -251,17 +251,6 @@
 
 .non-jobs-intro {
   margin: 0 0 1.6rem;
-
-  & p {
-    font-family: var(--base-font-mono);
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: normal;
-  }
-
-  a:not([class]) {
-    color: var(--text-accent);
-  }
 }
 
 .non-jobs-title {
@@ -390,6 +379,7 @@
   .non-jobs {
     .site-content-container {
       &::before {
+        display: none;
         left: 0;
         right: 0;
         width: calc(100% - 2rem);

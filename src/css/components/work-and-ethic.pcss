@@ -220,39 +220,10 @@
 
   background: var(--bg-quinary);
 
-  & .work-ethic-heading {
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: -7.9rem;
-      top: -5rem;
-      width: 11.6875rem;
-      height: 2.5625rem;
-      transform: rotate(-22.651deg);
-      background-color: var(--bg-nonary);
-      opacity: 0.3;
-    }
-  }
-
   & .work-ethic-handwritten {
     margin: 0 1rem;
     font-size: 1.3rem;
     transform: rotate(-2.525deg);
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    right: 6rem;
-    top: -1.5rem;
-    width: 15.67638rem;
-    height: 2.5625rem;
-    transform: rotate(-1.736deg);
-
-    background-color: var(--bg-nonary);
-    opacity: 0.3;
   }
 
   &::after {
@@ -644,6 +615,31 @@
       max-width: 47%;
 
       margin-bottom: 1.8rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -7.9rem;
+        top: -5rem;
+        width: 11.6875rem;
+        height: 2.5625rem;
+        transform: rotate(-22.651deg);
+        background-color: var(--bg-nonary);
+        opacity: 0.3;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 6rem;
+      top: -1.5rem;
+      width: 15.67638rem;
+      height: 2.5625rem;
+      transform: rotate(-1.736deg);
+
+      background-color: var(--bg-nonary);
+      opacity: 0.3;
     }
 
     & .work-ethic-text {
