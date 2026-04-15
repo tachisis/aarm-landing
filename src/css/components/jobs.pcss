@@ -144,31 +144,23 @@
     transform: rotate(0.723deg);
 
     &::before {
-      content: "";
-      position: absolute;
+      @extend .tape;
       right: 0.4rem;
       top: -1.7rem;
 
       width: 11.6rem;
       height: 2.5rem;
       transform: rotate(1.826deg);
-
-      background-color: var(--bg-nonary);
-      opacity: 0.3;
     }
 
     &::after {
-      content: "";
-      position: absolute;
+      @extend .tape;
       left: -0.85rem;
       bottom: -1.3rem;
 
       width: 11.6rem;
       height: 2.5rem;
       transform: rotate(1.826deg);
-
-      background-color: var(--bg-nonary);
-      opacity: 0.3;
     }
   }
 }
@@ -187,20 +179,15 @@
     transform: rotate(-3.079deg);
 
     &::before {
-      content: "";
-      display: block;
+      @extend .clip-1;
 
       width: 5.8rem;
       height: 5.5rem;
 
       transform: rotate(-9.6deg);
 
-      position: absolute;
       top: -1.4rem;
       right: -3.6rem;
-
-      background: url(../images/clip-1.svg) no-repeat left top;
-      background-size: 100% 100%;
     }
   }
 }

@@ -9,16 +9,12 @@
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
 
   &::before {
-    content: "";
-    position: absolute;
+    @extend .folder-clip;
     left: 50%;
     top: -7.6rem;
 
-    width: 1.92352rem;
-    height: 19.14095rem;
-
-    background: url("../images/folder-clip.svg") no-repeat center center;
-    background-size: contain;
+    width: 1.9rem;
+    height: 19.1rem;
 
     transform: translateX(-50%) rotate(90deg);
     transform-origin: center center;
@@ -330,25 +326,19 @@
     transform: rotate(0.08deg);
 
     &::before {
-      content: "";
-      position: absolute;
+      @extend .tape;
       left: 1.4rem;
       top: -1.2rem;
       width: 4.875rem;
       height: 2.5625rem;
-      opacity: 0.3;
-      background: var(--bg-nonary);
     }
 
     &::after {
-      content: "";
-      position: absolute;
+      @extend .tape;
       right: -1rem;
       bottom: -1.5rem;
       width: 11.6875rem;
       height: 2.5625rem;
-      opacity: 0.3;
-      background: var(--bg-nonary);
     }
   }
 }
@@ -403,20 +393,14 @@
     aspect-ratio: 4/5;
 
     &::before {
-      position: absolute;
+      @extend .clip-2;
       top: -0.6rem;
       right: 1.1rem;
       z-index: 20;
 
-      content: "";
-
-      display: block;
       width: 1.467rem;
-      height: 5.98763rem;
+      height: 5.9rem;
       transform: rotate(6.162deg);
-
-      background: url("../images/clip-3.svg") no-repeat;
-      background-size: contain;
     }
   }
 
@@ -445,16 +429,12 @@
     box-shadow: var(--small-shadow);
 
     &::before {
-      content: "";
-      display: block;
+      @extend .clip-1;
       width: 4.2rem;
       height: 4rem;
       transform: rotate(-170deg);
-      position: absolute;
       top: -1.1rem;
       left: -2.3rem;
-      background: url("../images/clip-1.svg") no-repeat left top;
-      background-size: 100% 100%;
     }
   }
 }
@@ -478,25 +458,19 @@
     mix-blend-mode: multiply;
 
     &::before {
-      content: "";
-      position: absolute;
+      @extend .tape;
       left: 1.4rem;
       top: -1.2rem;
       width: 11.6875rem;
       height: 2.5625rem;
-      opacity: 0.3;
-      background: var(--bg-nonary);
     }
 
     &::after {
-      content: "";
-      position: absolute;
+      @extend .tape;
       right: -1rem;
       bottom: -1.5rem;
       width: 11.6875rem;
       height: 2.5625rem;
-      opacity: 0.3;
-      background: var(--bg-nonary);
     }
   }
 
@@ -546,14 +520,11 @@
     }
 
     &::before {
-      content: "";
-      position: absolute;
+      @extend .folder-clip;
       left: 1rem;
       top: -3rem;
-      width: 1.92352rem;
-      height: 19.14095rem;
-      background: url("../images/folder-clip.svg") no-repeat center center;
-      background-size: contain;
+      width: 1.9rem;
+      height: 19.1rem;
     }
   }
 
@@ -598,25 +569,19 @@
     aspect-ratio: 197/246;
 
     &::before {
-      content: "";
-      position: absolute;
+      @extend .tape;
       left: -1.25rem;
       top: 0.75rem;
       height: 4.8rem;
       width: 2.5rem;
-      opacity: 0.3;
-      background: var(--bg-nonary);
     }
 
     &::after {
-      content: "";
-      position: absolute;
+      @extend .tape;
       right: -1.25rem;
       bottom: -1.1rem;
       width: 2.5rem;
       height: 11.6rem;
-      opacity: 0.3;
-      background: var(--bg-nonary);
     }
   }
 }
@@ -656,17 +621,12 @@
     margin-bottom: 1.1rem;
 
     &::before {
-      content: "";
-
-      position: absolute;
+      @extend .tape;
       left: -1.7rem;
       bottom: 0.4rem;
 
       height: 3.4rem;
       width: 2.5rem;
-
-      opacity: 0.3;
-      background: var(--bg-nonary);
     }
   }
 }
@@ -744,20 +704,14 @@
     aspect-ratio: 201/287;
 
     &::before {
-      position: absolute;
+      @extend .clip-2;
       top: -0.6rem;
       right: 1.1rem;
       z-index: 20;
 
-      content: "";
-
-      display: block;
-      width: 1.467rem;
-      height: 5.98763rem;
+      width: 1.4rem;
+      height: 5.9rem;
       transform: rotate(6.162deg);
-
-      background: url("../images/clip-3.svg") no-repeat;
-      background-size: contain;
     }
   }
 
@@ -794,19 +748,13 @@
     margin: 0 0 1.6rem -1.1rem;
 
     &::before {
-      content: "";
-      display: block;
-
+      @extend .clip-1;
       width: 5.8rem;
       height: 5.5rem;
       transform: rotate(-194deg);
 
-      position: absolute;
       bottom: 1.5rem;
       left: -4.3rem;
-
-      background: url("../images/clip-1.svg") no-repeat left top;
-      background-size: 100% 100%;
     }
   }
 }

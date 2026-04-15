@@ -210,7 +210,7 @@
   box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
 
   &::before {
-    position: absolute;
+    @extend .clip-2;
     top: -0.41rem;
     right: 1.4rem;
 
@@ -218,13 +218,6 @@
     height: 3.3rem;
 
     transform: rotate(5.388deg);
-
-    content: "";
-
-    display: block;
-
-    background: url("../images/clip-3.svg") no-repeat;
-    background-size: contain;
   }
 }
 
@@ -530,7 +523,7 @@
 
     & dd {
       & ins {
-        top: -3rem;
+        top: -4.6rem;
         left: 9rem;
         width: 12rem;
         transform: none;

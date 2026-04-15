@@ -58,16 +58,10 @@
   }
 
   &::before {
-    content: "";
-    display: block;
-    width: 2.927rem;
-    height: 2.79rem;
-    transform: rotate(5.864deg);
-    position: absolute;
+    @extend .clip-1;
+    transform: rotate(5.8deg);
     bottom: 1.3rem;
     right: -2.3rem;
-    background: url(../images/clip-1.svg) no-repeat left top;
-    background-size: 100% 100%;
   }
 }
 
@@ -163,14 +157,11 @@
     }
 
     &::before {
-      content: "";
-      position: absolute;
+      @extend .folder-clip;
       left: 1rem;
       top: 4.8rem;
-      width: 1.92352rem;
-      height: 19.14095rem;
-      background: url("../images/folder-clip.svg") no-repeat center center;
-      background-size: contain;
+      width: 1.9rem;
+      height: 19.1rem;
     }
   }
 }
@@ -617,29 +608,22 @@
       margin-bottom: 1.8rem;
 
       &::before {
-        content: "";
-        position: absolute;
+        @extend .tape;
         left: -7.9rem;
         top: -5rem;
         width: 11.6875rem;
         height: 2.5625rem;
         transform: rotate(-22.651deg);
-        background-color: var(--bg-nonary);
-        opacity: 0.3;
       }
     }
 
     &::before {
-      content: "";
-      position: absolute;
+      @extend .tape;
       right: 6rem;
       top: -1.5rem;
       width: 15.67638rem;
       height: 2.5625rem;
       transform: rotate(-1.736deg);
-
-      background-color: var(--bg-nonary);
-      opacity: 0.3;
     }
 
     & .work-ethic-text {
