@@ -8,6 +8,7 @@
   var ctx = null;
   var animId = null;
   var boundResize = null;
+  var ro = null;
   var boundMouseMove = null;
   var boundMouseUp = null;
 
@@ -33,6 +34,8 @@
     initState();
     bindEvents();
     resize();
+    // If layout/CSS applies after init, re-measure on next frame.
+    requestAnimationFrame(resize);
     animId = requestAnimationFrame(render);
   }
 
@@ -43,6 +46,10 @@
     animId = null;
 
     unbindEvents();
+    if (ro) {
+      ro.disconnect();
+      ro = null;
+    }
 
     figure.removeChild(canvas);
     canvas = null;
@@ -482,6 +489,16 @@
     window.addEventListener("resize", boundResize);
     window.addEventListener("mousemove", boundMouseMove);
     window.addEventListener("mouseup", boundMouseUp);
+
+    // Track figure size changes (CSS/layout shifts won't trigger window resize).
+    if (window.ResizeObserver) {
+      ro = new ResizeObserver(function () {
+        resize();
+      });
+      ro.observe(figure);
+    } else {
+      window.addEventListener("load", resize, { once: true });
+    }
 
     canvas.addEventListener("mousedown", onMouseDown);
     canvas.addEventListener("touchstart", onTouchStart, { passive: false });

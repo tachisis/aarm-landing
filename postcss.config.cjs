@@ -16,6 +16,10 @@ module.exports = (ctx) => {
       },
       ...(isProd
         ? {
+            "@fullhuman/postcss-purgecss": {
+              content: ["./dist/**/*.html"],
+              safelist: ["nav-menu-open", "dot-matrix-printer--matrix-print"],
+            },
             cssnano: {
               preset: "default",
             },

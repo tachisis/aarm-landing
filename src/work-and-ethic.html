@@ -1,7 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="css/work-and-ethic.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript><link rel="stylesheet" href="css/work-and-ethic.css" /></noscript>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -57,7 +63,23 @@
 
             <section class="work-ethic-section work-ethic-section--domainless">
               <figure class="work-ethic-illustration" aria-hidden="true">
-                <img src="/images/w-e-pic.png" width="326" alt="Tan" />
+                <picture>
+                  <source
+                    srcset="
+                      /images/w-e-tan@1x.webp 1x,
+                      /images/w-e-tan@2x.webp 2x
+                    "
+                    type="image/webp"
+                  />
+                  <img
+                    src="/images/w-e-tan@1x.webp"
+                    width="460"
+                    height="636"
+                    alt="Illustration: the picture of a tan"
+                    loading="lazy"
+                    type="image/webp"
+                  />
+                </picture>
               </figure>
               <div class="work-ethic-text">
                 <h3 class="work-ethic-heading">
@@ -138,7 +160,12 @@
                 class="work-ethic-section work-ethic-section--cathedrals"
               >
                 <figure class="work-ethic-illustration" aria-hidden="true">
-                  <img src="/images/airplane-full.png" alt="Airplane" />
+                  <img
+                    src="/images/airplane-full.png"
+                    width="566"
+                    height="342"
+                    alt="Airplane"
+                  />
                 </figure>
                 <h3 class="work-ethic-heading">
                   They built cathedrals without Scrum
