@@ -70,22 +70,15 @@
     var figW = rect.width;
     var figH = rect.height;
 
+    // Canvas should follow the figure geometry; positioning is handled by CSS.
+    W = figW;
+    H = figH;
     RADIUS = Math.min(figW, figH) * 0.36;
 
-    // Extend canvas beyond figure so orbits/annotations aren't clipped
-    var maxExtent = RADIUS + 130;
-    var padX = Math.max(0, maxExtent - figW / 2);
-    var padY = Math.max(0, maxExtent - figH / 2);
-
-    W = figW + padX * 2;
-    H = figH + padY * 2;
-
-    canvas.width = Math.max(1, Math.round(W * DPR));
-    canvas.height = Math.max(1, Math.round(H * DPR));
-    canvas.style.width = W + "px";
-    canvas.style.height = H + "px";
-    figure.style.setProperty("--canvas-pad-x", padX + "px");
-    figure.style.setProperty("--canvas-pad-y", padY + "px");
+    canvas.width = Math.max(1, Math.round(figW * DPR));
+    canvas.height = Math.max(1, Math.round(figH * DPR));
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
 
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
     CX = W / 2;

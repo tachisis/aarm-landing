@@ -160,12 +160,23 @@
                 class="work-ethic-section work-ethic-section--cathedrals"
               >
                 <figure class="work-ethic-illustration" aria-hidden="true">
-                  <img
-                    src="/images/airplane-full.png"
-                    width="566"
-                    height="342"
-                    alt="Airplane"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        /images/airplane-full@1x.webp 1x,
+                        /images/airplane-full@2x.webp 2x
+                      "
+                      type="image/webp"
+                    />
+                    <img
+                      src="/images/airplane-full@1x.webp"
+                      width="566"
+                      height="342"
+                      alt="Illustration: the picture of an airplane"
+                      loading="lazy"
+                      type="image/webp"
+                    />
+                  </picture>
                 </figure>
                 <h3 class="work-ethic-heading">
                   They built cathedrals without Scrum

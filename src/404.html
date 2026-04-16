@@ -5,7 +5,7 @@
       rel="stylesheet"
       href="css/404.css"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
     <noscript><link rel="stylesheet" href="css/404.css" /></noscript>
     <meta charset="UTF-8" />
@@ -33,12 +33,23 @@
               </p>
 
               <figure class="page-404-illustration">
-                <img
-                  src="images/404-illustration-1.png"
-                  width="1044"
-                  height="1144"
-                  alt="Illustration: The picture of an open door"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      /images/404-illustration-1@1x.webp 1x,
+                      /images/404-illustration-1@2x.webp 2x
+                    "
+                    type="image/webp"
+                  />
+                  <img
+                    src="/images/404-illustration-1@1x.webp"
+                    width="1044"
+                    height="1144"
+                    alt="Illustration: The picture of an open door"
+                    loading="lazy"
+                    type="image/webp"
+                  />
+                </picture>
               </figure>
             </section>
 
@@ -306,12 +317,23 @@
               </article>
 
               <figure class="page-404-illustration-2">
-                <img
-                  src="images/404-illustration-2.png"
-                  width="774"
-                  height="848"
-                  alt="Illustration: The picture of a compass"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      /images/404-illustration-2@1x.webp 1x,
+                      /images/404-illustration-2@2x.webp 2x
+                    "
+                    type="image/webp"
+                  />
+                  <img
+                    src="/images/404-illustration-2@1x.webp"
+                    width="774"
+                    height="848"
+                    alt="Illustration: The picture of a compass"
+                    loading="lazy"
+                    type="image/webp"
+                  />
+                </picture>
               </figure>
             </section>
           </div>
