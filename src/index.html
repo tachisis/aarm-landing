@@ -13,6 +13,8 @@
       body {
         min-height: 100vh;
         line-height: 1.5;
+        background-color: #302f33;
+        color: #302f33;
       }
       img {
         display: block;
@@ -22,8 +24,85 @@
       .site-overflow-container {
         overflow-x: hidden;
       }
+      .site-header-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        pointer-events: none;
+        visibility: hidden;
+      }
       .site-header-wrap {
+        position: relative;
+        z-index: 1000;
+        max-width: 72rem;
+        margin: 0 2rem 2.86rem;
         min-height: 4.5rem;
+      }
+      .site-header {
+        position: relative;
+        z-index: 2;
+        padding: 0.83rem 0.75rem 0.65rem 0.85rem;
+        background-color: #fff;
+      }
+      .site-header-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .burger {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+      .site-header-title {
+        position: relative;
+      }
+      .site-header-title a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+      .site-header .aaic-logo {
+        width: 9.7rem;
+        height: 1.875rem;
+      }
+      .site-header-drop {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 1;
+      }
+      .site-header-panel {
+        display: grid;
+        grid-template-rows: 0fr;
+        background-color: #fff;
+      }
+      .site-header-panel > * {
+        overflow: hidden;
+      }
+      .site-header-edge {
+        position: relative;
+        top: -1px;
+        height: 0.3rem;
+        background: #fff;
+      }
+      .site-header-nav {
+        text-align: right;
+      }
+      .site-header-nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 22.4rem 0.75rem 1.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
       }
       .site-content {
         margin: 0 auto;
@@ -54,6 +133,40 @@
         overflow: hidden;
       }
       @media (min-width: 64rem) {
+        .site-header-wrap {
+          margin: 0 auto 1.47rem;
+        }
+        .site-header {
+          padding: 1.3rem 1rem 1.7rem 1.2rem;
+        }
+        .site-header .aaic-logo {
+          width: 12.94rem;
+          height: 2.5rem;
+        }
+        .site-header-drop {
+          top: 0;
+          bottom: 0;
+          right: -1.8rem;
+          left: auto;
+          display: flex;
+          align-items: center;
+        }
+        .site-header-panel {
+          display: block;
+          background: transparent;
+        }
+        .site-header-panel > * {
+          overflow: visible;
+        }
+        .site-header-nav ul {
+          flex-direction: row;
+          align-items: center;
+          gap: 1.5rem;
+          padding: 0;
+        }
+        .burger {
+          display: none;
+        }
         .site-content {
           padding-bottom: 3.6875rem;
         }
@@ -139,7 +252,7 @@
                 Specialisms
               </h2>
               <section class="specialisms-01 folder">
-                <span class="folder-tab">01</span>
+                <div class="folder-tab">01</div>
                 <figure class="specialisms-illustration">
                   <picture>
                     <source
@@ -194,7 +307,7 @@
                 </div>
               </section>
               <section class="specialisms-02 folder folder--tertiary">
-                <span class="folder-tab folder-tab--right">02</span>
+                <div class="folder-tab folder-tab--right">02</div>
                 <figure class="specialisms-illustration">
                   <picture>
                     <source
@@ -240,7 +353,7 @@
                 </div>
               </section>
               <section class="specialisms-03 folder folder--quaternary">
-                <span class="folder-tab">03</span>
+                <div class="folder-tab">03</div>
                 <div class="specialisms-text">
                   <h3 class="specialisms-heading">
                     Robotic Models in Simulated Worlds
@@ -283,7 +396,7 @@
                 </figure>
               </section>
               <section class="specialisms-04 folder">
-                <span class="folder-tab folder-tab--right">04</span>
+                <div class="folder-tab folder-tab--right">04</div>
                 <div class="specialisms-text">
                   <h3 class="specialisms-heading">
                     Multidimensional Optimisation Problems
