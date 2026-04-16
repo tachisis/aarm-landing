@@ -1,6 +1,82 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      * {
+        margin: 0;
+      }
+      body {
+        min-height: 100vh;
+        line-height: 1.5;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      .site-overflow-container {
+        overflow-x: hidden;
+      }
+      .site-header-wrap {
+        min-height: 4.5rem;
+      }
+      .site-content {
+        margin: 0 auto;
+        max-width: 82rem;
+        padding: 0 1rem 1.6875rem;
+      }
+      .site-content-container {
+        position: relative;
+        background: #fff;
+        padding: 0 1rem;
+      }
+      .site-content-wrapper {
+        border-style: dashed;
+        border-color: rgba(48, 47, 51, 0.1);
+        border-width: 0 1px;
+        padding: 1rem 0.5rem;
+      }
+      .main-hero {
+        position: relative;
+        padding: 0.85rem 0 101.6667%;
+      }
+      .main-hero-illustration {
+        position: absolute;
+        left: -1.5rem;
+        bottom: -2.3rem;
+        width: calc(100% + 3rem);
+        aspect-ratio: 60 / 61;
+        overflow: hidden;
+      }
+      @media (min-width: 64rem) {
+        .site-content {
+          padding-bottom: 3.6875rem;
+        }
+        .site-content-container {
+          padding: 0 2rem;
+        }
+        .site-content-wrapper {
+          padding: 2rem 3rem 2.5rem;
+        }
+        .main-hero {
+          padding: 1rem 3rem 2.61rem;
+        }
+        .main-hero-illustration {
+          left: auto;
+          right: -6rem;
+          top: -1.9rem;
+          bottom: auto;
+          width: 38.625rem;
+          height: 35.74688rem;
+          aspect-ratio: 94 / 87;
+        }
+      }
+    </style>
     <link
       rel="stylesheet"
       href="css/index.css"
