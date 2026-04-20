@@ -27,15 +27,23 @@
     canvas = document.createElement("canvas");
     canvas.id = "globe";
     ctx = canvas.getContext("2d");
+    canvas.style.position = "absolute";
+    canvas.style.inset = "0";
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
+    canvas.style.opacity = "0";
+    canvas.style.transition = "opacity 180ms ease";
 
-    if (img) img.style.display = "none";
     figure.appendChild(canvas);
 
     initState();
     bindEvents();
     resize();
     // If layout/CSS applies after init, re-measure on next frame.
-    requestAnimationFrame(resize);
+    requestAnimationFrame(function () {
+      resize();
+      canvas.style.opacity = "1";
+    });
     animId = requestAnimationFrame(render);
   }
 
