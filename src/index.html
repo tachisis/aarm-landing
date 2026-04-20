@@ -36,11 +36,11 @@
         z-index: 1000;
         max-width: 72rem;
         margin: 0 2rem 2.86rem;
-        min-height: 4.5rem;
       }
       .site-header {
         position: relative;
         z-index: 2;
+        min-height: 3.5rem;
         padding: 0.83rem 0.75rem 0.65rem 0.85rem;
         background-color: #fff;
       }
@@ -130,7 +130,15 @@
         bottom: -2.3rem;
         width: calc(100% + 3rem);
         aspect-ratio: 60 / 61;
-        overflow: hidden;
+        overflow: visible;
+      }
+      .main-hero-title {
+        width: 18.4rem;
+        height: 7.1rem;
+        margin: 0 0 2.5rem 0.5rem;
+      }
+      .main-hero-text {
+        margin-bottom: 2.3rem;
       }
       @media (min-width: 64rem) {
         .site-header-wrap {
@@ -177,7 +185,26 @@
           padding: 2rem 3rem 2.5rem;
         }
         .main-hero {
+          margin: 0 -3rem 2.45rem;
           padding: 1rem 3rem 2.61rem;
+          background-image: repeating-linear-gradient(
+            to right,
+            rgba(48, 47, 51, 0.1) 0,
+            rgba(48, 47, 51, 0.1) 10px,
+            transparent 10px,
+            transparent 20px
+          );
+          background-position: bottom;
+          background-size: 100% 1px;
+          background-repeat: no-repeat;
+        }
+        .main-hero-title {
+          width: 40rem;
+          height: 14.5rem;
+          margin: 2.2rem 0 1.8rem -0.4rem;
+        }
+        .main-hero-text {
+          margin-bottom: 0;
         }
         .main-hero-illustration {
           left: auto;

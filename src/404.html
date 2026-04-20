@@ -36,11 +36,11 @@
         z-index: 1000;
         max-width: 72rem;
         margin: 0 2rem 2.86rem;
-        min-height: 4.5rem;
       }
       .site-header {
         position: relative;
         z-index: 2;
+        min-height: 3.5rem;
         padding: 0.83rem 0.75rem 0.65rem 0.85rem;
         background-color: #fff;
       }
@@ -120,6 +120,20 @@
         border-width: 0 1px;
         padding: 1rem 0.5rem;
       }
+      .page-404-title {
+        margin: 2.8rem auto 1.25rem;
+        width: 13rem;
+        height: 5.5rem;
+      }
+      .page-404-hero-lead {
+        margin-bottom: 0.6rem;
+        text-align: center;
+      }
+      .page-404-illustration {
+        margin: 0 auto 1.6rem;
+        max-width: 16.875rem;
+        mix-blend-mode: multiply;
+      }
       @media (min-width: 64rem) {
         .site-header-wrap {
           margin: 0 auto 1.47rem;
@@ -154,6 +168,26 @@
         }
         .burger {
           display: none;
+        }
+        .page-404-title {
+          margin: 1.6rem 0 2.3rem -0.9rem;
+          width: 15rem;
+          height: 6.75rem;
+        }
+        .page-404-hero {
+          position: relative;
+          padding-bottom: 5.6rem;
+        }
+        .page-404-hero-lead {
+          position: relative;
+          margin: 0 0 0 0.2rem;
+          text-align: left;
+        }
+        .page-404-illustration {
+          position: absolute;
+          top: -0.6rem;
+          right: 0.4rem;
+          max-width: 32.6rem;
         }
         .site-content {
           padding-bottom: 3.6875rem;
@@ -200,17 +234,25 @@
               <figure class="page-404-illustration">
                 <picture>
                   <source
+                    media="(max-width: 63.9375rem)"
                     srcset="
-                      /images/404-illustration-1@1x.webp 1x,
-                      /images/404-illustration-1@2x.webp 2x
+                      images/404-illustration-1-mobile@1x.webp 1x,
+                      images/404-illustration-1-mobile@2x.webp 2x
+                    "
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="
+                      images/404-illustration-1@1x.webp 1x,
+                      images/404-illustration-1@2x.webp 2x
                     "
                     type="image/webp"
                   />
                   <img
-                    src="/images/404-illustration-1@1x.webp"
-                    width="1044"
-                    height="1144"
-                    alt="Illustration: The picture of an open door"
+                    src="images/404-illustration-1@1x.webp"
+                    width="270"
+                    height="295"
+                    alt="Illustration: A picture of an open door"
                     fetchpriority="high"
                     loading="eager"
                     decoding="async"
@@ -486,17 +528,25 @@
               <figure class="page-404-illustration-2">
                 <picture>
                   <source
+                    media="(max-width: 63.9375rem)"
                     srcset="
-                      /images/404-illustration-2@1x.webp 1x,
-                      /images/404-illustration-2@2x.webp 2x
+                      images/404-illustration-2-mobile@1x.webp 1x,
+                      images/404-illustration-2-mobile@2x.webp 2x
+                    "
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="
+                      images/404-illustration-2@1x.webp 1x,
+                      images/404-illustration-2@2x.webp 2x
                     "
                     type="image/webp"
                   />
                   <img
-                    src="/images/404-illustration-2@1x.webp"
-                    width="774"
-                    height="848"
-                    alt="Illustration: The picture of a compass"
+                    src="images/404-illustration-2@1x.webp"
+                    width="270"
+                    height="295"
+                    alt="Illustration: A picture of a compass"
                     loading="lazy"
                     type="image/webp"
                   />

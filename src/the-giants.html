@@ -26,11 +26,11 @@
         z-index: 1000;
         max-width: 72rem;
         margin: 0 2rem 2.86rem;
-        min-height: 4.5rem;
       }
       .site-header {
         position: relative;
         z-index: 2;
+        min-height: 3.5rem;
         padding: 0.83rem 0.75rem 0.65rem 0.85rem;
         background-color: #fff;
       }
@@ -91,6 +91,23 @@
       .site-content { margin: 0 auto; max-width: 82rem; padding: 0 1rem 1.6875rem; }
       .site-content-container { position: relative; background: #fff; padding: 0 1rem; }
       .site-content-wrapper { border-style: dashed; border-color: rgba(48, 47, 51, 0.1); border-width: 0 1px; padding: 1rem 0.5rem; }
+      .the-giants-hero {
+        position: relative;
+        z-index: 0;
+        margin: -2.1rem 0 2.75rem;
+        padding: 4.9rem 1rem 6.7rem;
+        background: #d9d9d9;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+      }
+      .the-giants-hero-title {
+        margin: 0 0 3.2rem;
+        width: 15.87894rem;
+        height: 6.89625rem;
+      }
+      .the-giants-hero-text {
+        margin: 0 auto;
+        text-align: left;
+      }
       @media (min-width: 64rem) {
         .site-header-wrap { margin: 0 auto 1.47rem; }
         .site-header { padding: 1.3rem 1rem 1.7rem 1.2rem; }
@@ -112,6 +129,30 @@
           padding: 0;
         }
         .burger { display: none; }
+        .the-giants-hero {
+          margin: -2.8rem -1rem 2.75rem;
+          padding: 3.3rem 0 0 2.2rem;
+          display: flex;
+          gap: 4.4rem;
+        }
+        .the-giants-hero-title {
+          flex: 0 0 19.75rem;
+          width: 19.75rem;
+          height: 8.5625rem;
+        }
+        .the-giants-hero-text {
+          position: static;
+          display: flex;
+          gap: 2.3rem;
+          padding: 5.2rem 2rem 0 0;
+          max-width: 100%;
+        }
+        .the-giants-hero-text .the-giants-hero-text-column:first-of-type {
+          flex: 0 0 52%;
+        }
+        .the-giants-hero-text .the-giants-hero-text-column:last-of-type {
+          padding-top: 2rem;
+        }
         .site-content { padding-bottom: 3.6875rem; }
         .site-content-container { padding: 0 2rem; }
         .site-content-wrapper { padding: 2rem 3rem 2.5rem; }
@@ -175,7 +216,7 @@
                     type="image/webp"
                   />
                   <img
-                    src="/images/alan-kay@1x.webp"
+                    src="images/alan-kay@1x.webp"
                     width="208"
                     height="258"
                     alt="Illustration: the portrait of Alan Kay"
@@ -214,7 +255,7 @@
                       type="image/webp"
                     />
                     <img
-                    src="/images/bret-victor@1x.webp"
+                    src="images/bret-victor@1x.webp"
                     alt="Illustration: the portrait of Bret Victor"
                     width="200"
                     height="250"
@@ -253,7 +294,7 @@
                     type="image/webp"
                   />
                   <img
-                    src="/images/doug-mcilroy@1x.webp"
+                    src="images/doug-mcilroy@1x.webp"
                   alt="Illustration: the portrait of Doug McIlroy"
                   width="209"
                   height="286"
@@ -286,7 +327,7 @@
                       type="image/webp"
                     />
                     <img
-                      src="/images/frank-rosenblatt@1x.webp"
+                      src="images/frank-rosenblatt@1x.webp"
                       alt="Illustration: the portrait of Frank Rosenblatt"
                       width="230"
                       height="299"
@@ -320,7 +361,7 @@
                       type="image/webp"
                     />
                     <img
-                    src="/images/ivan-sutherland@1x.webp"
+                    src="images/ivan-sutherland@1x.webp"
                     alt="Illustration: the portrait of Ivan Sutherland"
                     width="230"
                     height="299"
@@ -353,7 +394,7 @@
                       type="image/webp"
                     />
                     <img
-                    src="/images/christopher-alexander@1x.webp"
+                    src="images/christopher-alexander@1x.webp"
                     alt="Illustration: the portrait of Christopher Alexander"
                     width="280"
                     height="351"
@@ -391,7 +432,7 @@
                       type="image/webp"
                     />
                     <img
-                    src="/images/saul-kripke@1x.webp"
+                    src="images/saul-kripke@1x.webp"
                     alt="Illustration: the portrait of Saul Kripke"
                     width="201"
                     height="251"
@@ -428,7 +469,7 @@
                       type="image/webp"
                     />
                     <img
-                    src="/images/genrikh-altshuller@1x.webp"
+                    src="images/genrikh-altshuller@1x.webp"
                     alt="Illustration: the portrait of Genrikh Altshuller"
                     width="230"
                     height="299"
@@ -469,7 +510,7 @@
                       type="image/webp"
                     />
                     <img
-                    src="/images/the-gang-of-four@1x.webp"
+                    src="images/the-gang-of-four@1x.webp"
                     alt="Illustration: the portrait of The Gang of Four"
                     width="221"
                     height="158"
@@ -507,7 +548,7 @@
                     type="image/webp"
                   />
                   <img
-                  src="/images/johan-huizinga@1x.webp"
+                  src="images/johan-huizinga@1x.webp"
                   alt="Illustration: the portrait of Johan Huizinga"
                   width="209"
                   height="295"
@@ -546,7 +587,7 @@
                     type="image/webp"
                   />
                   <img
-                  src="/images/lev-vygotsky@1x.webp"
+                  src="images/lev-vygotsky@1x.webp"
                   alt="Illustration: the portrait of Lev Vygotsky"
                   width="262"
                   height="374"

@@ -62,23 +62,26 @@
   // SIZING
   // ============================================
   var DPR = Math.min(window.devicePixelRatio || 1, 2);
-  var W, H, CX, CY, RADIUS;
+  var W, H, CX, CY, RADIUS, SIZE_SCALE;
 
   function resize() {
     if (!canvas) return;
     var rect = figure.getBoundingClientRect();
     var figW = rect.width;
     var figH = rect.height;
-
-    // Canvas should follow the figure geometry; positioning is handled by CSS.
     W = figW;
     H = figH;
     RADIUS = Math.min(figW, figH) * 0.36;
+    SIZE_SCALE = Math.min(figW, figH) / 900;
 
     canvas.width = Math.max(1, Math.round(figW * DPR));
     canvas.height = Math.max(1, Math.round(figH * DPR));
     canvas.style.width = "100%";
     canvas.style.height = "100%";
+    canvas.style.left = "0";
+    canvas.style.top = "0";
+    canvas.style.right = "auto";
+    canvas.style.bottom = "auto";
 
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
     CX = W / 2;
@@ -185,7 +188,7 @@
         inclination: s.inclination,
         phase: s.phase,
         speed: s.speed,
-        orbitRadius: RADIUS + s.orbitOffset,
+        orbitRadius: RADIUS + s.orbitOffset * SIZE_SCALE,
         size: s.size,
         trail: [],
       };
@@ -282,7 +285,7 @@
       return {
         angle: b.angle,
         elevation: b.elevation,
-        dist: RADIUS + b.distOffset,
+        dist: RADIUS + b.distOffset * SIZE_SCALE,
         rows: b.rows.map(function (r) {
           return { label: r.label, value: r.value, calculating: false };
         }),

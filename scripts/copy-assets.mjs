@@ -70,7 +70,7 @@ async function optimizeRaster(src, dest, ext) {
     }
     if (ext === ".webp") {
       await writeRasterIfSmaller(src, dest, (img) =>
-        img.webp({ quality: 82, effort: 6 }),
+        img.webp({ quality: 70, effort: 6 }),
       );
       return;
     }
