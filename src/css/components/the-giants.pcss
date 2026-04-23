@@ -160,27 +160,28 @@
 }
 
 .the-giants-profile--victor {
-  margin: 0 -2rem 0 -1.6rem;
+  position: relative;
+  margin: 0 -4rem 0 -1.6rem;
 
-  &::before {
-    content: "";
-    position: absolute;
-    left: 1.5rem;
-    top: 1.9rem;
-
-    width: 100%;
-    height: 20%;
-
-    background-color: var(--bg-quinary);
-    box-shadow: var(--base-shadow);
-
-    z-index: 10;
-
-    border-radius: 0.125rem;
-  }
-
-  &.folder {
+  & .folder {
     padding-top: 4.6rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 1.5rem;
+      top: 1.9rem;
+
+      width: 100%;
+      height: 20%;
+
+      background-color: var(--bg-quinary);
+      box-shadow: var(--base-shadow);
+
+      z-index: 10;
+
+      border-radius: 0.125rem;
+    }
   }
 
   .the-giants-profile-content {
@@ -188,7 +189,7 @@
     z-index: 20;
 
     margin: 0 -0.6rem 0 -2.1rem;
-    padding: 14.2rem 2.5rem 2rem 3.6rem;
+    padding: 14.2rem 4rem 2rem 3.6rem;
 
     background-color: var(--bg-content);
     color: var(--text-primary);
@@ -201,7 +202,7 @@
   .the-giants-portrait {
     position: absolute;
     top: -3rem;
-    right: 1rem;
+    right: 3rem;
 
     width: 12.5rem;
     height: 15.625rem;
@@ -688,32 +689,50 @@
   .the-giants-profile--victor {
     margin: 0 -4.5rem 0 1.3rem;
 
-    &.folder {
+    & .folder {
       padding: 3.4rem 2.6rem 4.2rem 0;
+      z-index: 10;
 
       filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.15));
-    }
 
-    &::before {
-      left: 3.8rem;
-      right: 8.6rem;
-      bottom: 1.6rem;
-      top: 0.9rem;
+      &::before {
+        left: 3.8rem;
+        right: 8.6rem;
+        bottom: 1.6rem;
+        top: 0.9rem;
 
-      width: auto;
-      height: auto;
+        width: auto;
+        height: auto;
+      }
+
+      &::after {
+        content: "";
+
+        position: absolute;
+        right: 1rem;
+        top: 4.5rem;
+
+        width: 16.2rem;
+        height: 29.5rem;
+
+        background-color: var(--bg-content);
+        border-radius: 0.25rem;
+        transform: rotate(1.455deg);
+      }
     }
 
     &::after {
       content: "";
       position: absolute;
       top: 2.3rem;
-      left: 0;
-      right: 0.5rem;
-      bottom: 0;
 
-      background: url(../images/specialisms-03-bg.svg) no-repeat center / 100%
-        100%;
+      right: -1.9rem;
+
+      width: 72.9rem;
+      height: 39.3rem;
+
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1167' height='629' viewBox='0 0 1167 629' fill='none'%3E%3Cpath d='M65.536 0L164.415 0.000349223L273.066 0H1146.02C1157.44 0 1166.54 9.54598 1166 20.9528L1137.91 609.953C1137.4 620.616 1128.61 629 1117.93 629H20C8.95432 629 0 620.046 0 609L0 18.9709C0 8.49358 8.49357 0 18.9709 0H65.536Z' fill='%23908070'/%3E%3C/svg%3E")
+        no-repeat center / 100% 100%;
       filter: drop-shadow(0 -10px 17px rgba(0, 0, 0, 0.25));
     }
 

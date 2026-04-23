@@ -1,5 +1,7 @@
 @media (--desktop) {
   .main-page {
+    position: relative;
+
     background-image:
       url("../images/scheme-bg-1.webp"), url("../images/scheme-bg-1.webp");
     background-repeat: no-repeat, no-repeat;
@@ -8,6 +10,26 @@
       18.90625rem 10.625rem;
     background-position:
       calc(50% - 42rem) 15rem,
-      calc(50% + 42rem) 35rem;
+      calc(50% + 42rem) 25rem;
+  }
+
+  .main-page-folder {
+    position: absolute;
+    top: 44.6rem;
+    right: calc(50% - 42rem - 1.5rem);
+    width: 19.6rem;
+    height: 62rem;
+
+    transform: rotate(1.54deg);
+
+    background: url("../images/main-page-folder@1x.webp") no-repeat center
+      center;
+    background-size: contain;
+
+    @media (min-resolution: 2dppx) {
+      background: url("../images/main-page-folder@2x.webp") no-repeat center
+        center;
+      background-size: contain;
+    }
   }
 }
