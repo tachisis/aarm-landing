@@ -1,4 +1,6 @@
 (function () {
+  document.documentElement.classList.add("js");
+
   var wrap = document.getElementById("site-header");
   var overlay = document.getElementById("site-header-overlay");
   var nav = document.getElementById("site-header-nav");

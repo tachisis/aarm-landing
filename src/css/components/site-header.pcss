@@ -11,7 +11,7 @@
     visibility 0s linear 0.35s;
 }
 
-html.nav-menu-open .site-header-overlay {
+html.js.nav-menu-open .site-header-overlay {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
@@ -69,25 +69,37 @@ html.nav-menu-open .site-header-overlay {
 }
 
 .site-header-drop {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 1;
 }
 
 .site-header-panel {
   background-color: var(--bg-content);
+  display: block;
+}
+
+.site-header-panel > * {
+  overflow: visible;
+}
+
+html.js .site-header-drop {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+html.js .site-header-panel {
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.site-header-panel > * {
+html.js .site-header-panel > * {
   overflow: hidden;
 }
 
-.site-header-wrap[data-open="true"] .site-header-panel {
+html.js .site-header-wrap[data-open="true"] .site-header-panel {
   grid-template-rows: 1fr;
 }
 
@@ -102,13 +114,9 @@ html.nav-menu-open .site-header-overlay {
 .site-header-nav {
   text-align: right;
 
-  max-height: calc(100vh - 3.5rem);
-  overflow-y: auto;
-  overflow-x: hidden;
-
   & ul {
     list-style: none;
-    padding: 22.4rem 0.75rem 1.8rem;
+    padding: 1.2rem 0.75rem 1.8rem;
     margin: 0;
 
     display: flex;
@@ -133,8 +141,18 @@ html.nav-menu-open .site-header-overlay {
   }
 }
 
-html.nav-menu-open,
-html.nav-menu-open body {
+html.js .site-header-nav {
+  max-height: calc(100vh - 3.5rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+html.js .site-header-nav ul {
+  padding-top: 22.4rem;
+}
+
+html.js.nav-menu-open,
+html.js.nav-menu-open body {
   overflow: hidden;
   overscroll-behavior: none;
 }
@@ -188,12 +206,34 @@ html.nav-menu-open body {
     z-index: 10;
   }
 
+  html.js .site-header-drop {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -1.8rem;
+    left: auto;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+  }
+
   .site-header-panel {
     display: block;
     background: transparent;
   }
 
+  html.js .site-header-panel {
+    display: block;
+    background: transparent;
+    grid-template-rows: none;
+    transition: none;
+  }
+
   .site-header-panel > * {
+    overflow: visible;
+  }
+
+  html.js .site-header-panel > * {
     overflow: visible;
   }
 
@@ -214,6 +254,15 @@ html.nav-menu-open body {
       padding: 0.2rem 3rem 0.2rem 0.5rem;
       font-size: var(--text-sm);
     }
+  }
+
+  html.js .site-header-nav {
+    max-height: none;
+    overflow: visible;
+  }
+
+  html.js .site-header-nav ul {
+    padding: 0;
   }
 
   .site-header-nav-item {
@@ -246,6 +295,13 @@ html.nav-menu-open body {
       &::before,
       &::after {
         opacity: 1;
+      }
+    }
+
+    a:focus-visible {
+      &::before,
+      &::after {
+        display: none;
       }
     }
   }
