@@ -31,7 +31,8 @@ async function inlineCriticalForPage(page) {
   });
 
   const outputHtml = await critters.process(inputHtml);
-  writeFileSync(htmlPath, outputHtml);
+  // Inlined CSS keeps css/-relative urls (../images); the page sits one level up.
+  writeFileSync(htmlPath, outputHtml.replace(/url\((["']?)\.\.\//g, "url($1"));
 }
 
 async function main() {

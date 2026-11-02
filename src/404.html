@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      // 404 is served at any missing URL; resolve relative links from the site root.
+      // On *.github.io the site root is the repo folder (first path segment).
+      var base = document.createElement("base");
+      base.href = location.hostname.endsWith("github.io")
+        ? "/" + location.pathname.split("/")[1] + "/"
+        : "/";
+      document.head.prepend(base);
+    </script>
     <style>
       *,
       *::before,
